@@ -9,6 +9,14 @@ class Usuario{
     private $rol;
     private $db;
     
+    public function __construct() {
+        try {
+            $this->db = Database::connect();
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+    
     //getters
     function getIdUsuario(){
         return $this->id_usuario;
@@ -51,13 +59,53 @@ class Usuario{
     //métodos
     
     public function save(){
-        $db = Database::connect();
         $sql = "insert into usuario values(null, '{$this->getNombre()}','{$this->getApellido()}','{$this->getEmail()}','{$this->getPassword()}','user')";
-        $save = $db->query($sql);
+        $save = $this->db->query($sql);
         
         $result = false;
         if($save){
             $result = true;
+        }
+        return $result;
+    }
+    
+    public function login(){
+        $result = false;
+        $email = $this->email;
+        $password = $this->password;
+        
+        //compruebo si existe el usuario
+        $sql = "select * from usuario where email = '$email'";
+        $login = $this->db->prepare($sql);
+        $login->bindParam('email', $email, PDO::PARAM_STR);
+        $login->bindValue('password', $password, PDO::PARAM_STR);
+        $login->execute();
+        $count = $login->rowCount();
+        $row = $login->fetch(PDO::FETCH_OBJ);
+        /*
+        if($count == 1 && !empty($row)){
+            $verify = password_verify($password,$row->password);
+            if($verify){
+                $result = $row;
+            }    
+        }
+         * 
+         */
+     
+        //if($login && $login->rowCount() === 1){
+        if($count == 1 && !empty($row)){
+            $usuario = $row;
+            
+            //verifico la contraseña
+            $verify = false;
+            if($password == $usuario->password){
+                $verify = true;
+            }
+            //$verify = password_verify($password,$usuario->password);
+            
+            if($verify){
+                $result = $usuario;
+            }
         }
         return $result;
     }

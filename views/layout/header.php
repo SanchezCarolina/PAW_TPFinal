@@ -27,22 +27,33 @@
                 </div>
                 -->
                 <!--BOTONES-->
+                <?php if(!isset($_SESSION['identity'])):?>
                 <div id="botones">
                     <div class="boton">
-                        Ingresar
+                        <a href=<?=base_url?>usuario/inicio>Ingresar</a>
                     </div>
                     <div class="boton">
-                        Registrarse
+                        <a href=<?=base_url?>usuario/registro>Registrarse</a>
                     </div>
                     <div class="boton">
                         Carrito
                     </div>
                 </div>
+                <?php else:?>
+                <div id="botones">
+                    <div class="boton">
+                        <a href="<?=base_url?>usuario/logout">Cerrar Sesión</a>
+                    </div>
+                    <div class="boton">
+                        Carrito
+                    </div>
+                </div>
+                <?php endif; ?>
             </header>
             <!--MENÚ-->
             <nav id="menu">
                 <ul>
-                    <li><a href="#">Inicio</a></li>
+                    <li><a href=<?=base_url?>>Inicio</a></li>
                     <li><a href="#">Libros</a></li>
                     <li><a href="#">Ofertas</a></li>
                     <li><a href="#">Contacto</a></li>
