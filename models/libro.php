@@ -9,7 +9,7 @@ class Libro{
     private $fecha_carga;
     private $precio;
     private $stock;
-    private $reseña;
+    private $resenia;
     private $db;
     
     public function __construct() {
@@ -53,8 +53,8 @@ class Libro{
         return $this->stock;
     }
 
-    function getReseña() {
-        return $this->reseña;
+    function getResenia() {
+        return $this->resenia;
     }
 
     function setIsbn($isbn) {
@@ -89,8 +89,8 @@ class Libro{
         $this->stock = $stock;
     }
 
-    function setReseña($reseña) {
-        $this->reseña = $reseña;
+    function setResenia($resenia) {
+        $this->resenia = $resenia;
     }
 
     //métodos
@@ -100,14 +100,29 @@ class Libro{
     }
     
     //devuelve solo el libro que corresponde a un determinado ISBN
-    //se utiliza para completar el formulario cuando se quiere modificar algun dato
      public function getOne(){
         $libro = $this->db->query("select * from libro where isbn = {$this->getIsbn()}");
         return $libro->fetchObject();
     }
     
+    public function getRecientes($limit){
+        $libros = $this->db->query("select * from libro order by fecha_carga desc limit $limit");
+        return $libros;
+    }
+    
     public function save(){
-        $sql = "insert into libro values('{$this->getIsbn()}','{$this->getGenero()}','{$this->getTitulo()}','{$this->getAutor()}','{$this->getPortada()}','{$this->getFecha_carga()}',{$this->getPrecio()},{$this->getStock()},'{$this->getReseña()}')";
+        $sql = "insert into libro values('{$this->getIsbn()}','{$this->getGenero()}','{$this->getTitulo()}','{$this->getAutor()}','{$this->getPortada()}','{$this->getFecha_carga()}',{$this->getPrecio()},{$this->getStock()},'{$this->getResenia()}')";
+        $save = $this->db->query($sql);
+       
+        $result = false;
+        if($save){
+            $result = true;
+        }
+        return $result;
+    }
+    
+    public function edit(){
+        $sql = "update libro set isbn='{$this->getIsbn()}', genero='{$this->getGenero()}', titulo='{$this->getTitulo()}', autor='{$this->getAutor()}', portada='{$this->getPortada()}', fecha_carga='{$this->getFecha_carga()}', precio={$this->getPrecio()}, stock={$this->getStock()} where isbn='{$this->isbn}'";
         $save = $this->db->query($sql);
        
         $result = false;

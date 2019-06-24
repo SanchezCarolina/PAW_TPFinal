@@ -5,6 +5,9 @@ require_once 'models/libro.php';
 class libroController{
     
     public function index(){
+        $libro = new Libro();
+        $libros = $libro->getRecientes(5);
+        
         require_once 'views/libro/contenido_inicio.php';
     }
     
@@ -13,6 +16,23 @@ class libroController{
         $libro = new Libro();
         $libros = $libro->getAll();
         require_once 'views/libro/gestion.php';
+    }
+    
+    public function verLibros(){
+        $libro = new Libro();
+        $libros = $libro->getAll();
+        require_once 'views/libro/verLibros.php';
+    }
+    
+     public function verLibroIndividual(){
+        if(isset($_GET['isbn'])){
+            $isbn = $_GET['isbn'];
+            $libro = new Libro();
+            $libro->setIsbn($isbn);
+            
+            $lib = $libro->getOne();
+        }
+        require_once 'views/libro/verLibroIndividual.php';
     }
     
     public function cargar(){
@@ -31,9 +51,9 @@ class libroController{
             $fecha_carga = isset($_POST['fecha_carga']) ? $_POST['fecha_carga'] : false;
             $precio = isset($_POST['precio']) ? $_POST['precio'] : false;
             $stock = isset($_POST['stock']) ? $_POST['stock'] : false;
-            $reseña = isset($_POST['reseña']) ? $_POST['reseña'] : false;
+            $resenia = isset($_POST['resenia']) ? $_POST['resenia'] : false;
             
-            if($isbn && $genero && $titulo && $autor  && $fecha_carga && $precio && $stock && $reseña){
+            if($isbn && $genero && $titulo && $autor  && $fecha_carga && $precio && $stock && $resenia){
                 $libro = new Libro();
             
                 $libro->setIsbn($isbn);
@@ -44,26 +64,17 @@ class libroController{
                 $libro->setFecha_carga($fecha_carga);
                 $libro->setPrecio($precio);
                 $libro->setStock($stock);
-                $libro->setReseña($reseña);
+                $libro->setResenia($resenia);
                 
-                //guardar imagen de la portada
-                /*
-                $file = $_FILES['portadaForm'];
-                $filename = $file['name'];
-                $mimetype = $file['type'];
-                
-                if($mimetype == 'image/jpg' || $mimetype == 'image/jpeg' || $mimetype == 'image/png'){
-                    if(!is_dir('uploads/images')){
-                        mkdir('uploads/images', 0777, true);
-                    }
-                    
-                    $libro->setPortada($filename);
-                    move_uploaded_file($file['tmp_name'], 'uploads/images'.$filename);
+                if(isset($_GET['isbn'])){
+                    $isbn = $_GET['isbn'];
+                    $libro->setIsbn($isbn);
+                   
+                    $save = $libro->edit(); //guardo en la BD los cambios que me llegan (actualizo datos)
+                }else{
+                    $save = $libro->save(); //creo un nuevo libro en la BD (inserto datos)
                 }
-                 * */
-              
                 
-                $save = $libro->save();
                 if($save){
                     $_SESSION['libro'] = 'complete';
                 }else{

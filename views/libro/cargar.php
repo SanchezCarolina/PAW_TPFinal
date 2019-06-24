@@ -1,11 +1,11 @@
 <?php if(isset($edit) && isset($lib) && is_object($lib)):?>
     <h2>Editar libro "<?=$lib->titulo?>"</h2>
-    <?php $url_action = base_url."libro/edit&isbn=".$lib->isbn;?>
+    <?php $url_action = base_url."libro/save&isbn=".$lib->isbn;?>
 <?php else: ?>
     <h2>Cargar nuevo libro</h2>
     <?php $url_action = base_url."libro/save";?>
     <div id="buscarLibroCargar">
-        <input id="search" placeholder="Titulo del libro">
+        <input id="search" placeholder="Titulo o autor del libro">
         <button id="button" class="botonSmall"></button>
         <h4>Resultados para su búsqueda</h4>
         <div id="divSelect">
@@ -31,8 +31,8 @@
         <label for="portadaForm">Portada:</label>
         <input type="text" name="portadaForm" id="portadaForm" value="<?= isset($lib) && is_object($lib) ? $lib->portada : '' ?>">
 
-        <label for="reseña">Reseña:</label>
-        <textarea name="reseña" id="reseña">"<?= isset($lib) && is_object($lib) ? $lib->reseña : '' ?>" </textarea>
+        <label for="resenia">Reseña:</label>
+        <textarea name="resenia" id="resenia">"<?= isset($lib) && is_object($lib) ? $lib->resenia : '' ?>" </textarea>
 
         <label for="fecha_carga">Fecha de carga:</label>
         <input type="date" name="fecha_carga" id="fecha_carga" value="<?= isset($lib) && is_object($lib) ? $lib->fecha_carga : '' ?>">

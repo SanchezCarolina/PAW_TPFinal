@@ -23,7 +23,7 @@ portada         varchar(255),
 fecha_carga     date not null,
 precio          float (100,2) not null,
 stock           int(255) not null,
-reseña          varchar(500) not null,
+resenia         varchar(2000) not null,
 
 CONSTRAINT pk_libro PRIMARY KEY(isbn)
 )ENGINE=InnoDb;

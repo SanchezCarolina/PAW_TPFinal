@@ -51,7 +51,7 @@
             <nav id="menu">
                 <ul>
                     <li><a href=<?=base_url?>>Inicio</a></li>
-                    <li><a href="#">Libros</a></li>
+                    <li><a href="<?=base_url?>libro/verLibros">Libros</a></li>
                     <li><a href="#">Ofertas</a></li>
                     <li><a href="#">Contacto</a></li>
                 </ul>
