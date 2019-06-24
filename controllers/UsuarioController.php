@@ -61,17 +61,7 @@ class usuarioController{
             $usuario->setPassword($_POST['password']);
             
             $identity = $usuario->login();
-            /*
-            if($identity && is_object($identity)){
-                $_SESSION['sess_user_id'] = $identity->id_usuario;
-                $_SESSION['sess_email'] = $identity->email;
-                $_SESSION['sess_name'] = $identity->nombre;
-            }else{
-                $msg = "Invalido email y/o contraseña";
-            }
-             * 
-             */
-  
+           
             if($identity && is_object($identity)){
                 $_SESSION['identity'] = $identity;
                 header("Location:".base_url);

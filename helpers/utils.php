@@ -25,4 +25,13 @@ class Utils{
             return true;
         }
     }
+    
+    /*
+    public static function showGeneros(){
+        require_once 'models/genero.php';
+        $genero = new Genero();
+        $generos = $genero->getAll();
+        return $generos;
+    }
+     * */
 }

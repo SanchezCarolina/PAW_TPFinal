@@ -14,34 +14,24 @@ CONSTRAINT uq_email UNIQUE(email)
 )ENGINE=InnoDb;
 
 
-CREATE TABLE genero(
-id_genero       int(255) auto_increment not null,
-nombre          varchar(255) not null,
-
-CONSTRAINT pk_genero PRIMARY KEY(id_genero)
-)ENGINE=InnoDb;
-
-
 CREATE TABLE libro(
-isbn            int(255) not null,
-id_genero       int(255) not null,
+isbn            varchar(255) not null,
+genero          varchar(255) not null,
 titulo          varchar(100) not null,
 autor           varchar(100),
-portada         varchar(255) not null,
+portada         varchar(255),
 fecha_carga     date not null,
 precio          float (100,2) not null,
 stock           int(255) not null,
 reseña          varchar(500) not null,
 
-
-CONSTRAINT pk_libro PRIMARY KEY(isbn),
-CONSTRAINT fk_libro_genero FOREIGN KEY (id_genero) REFERENCES genero(id_genero)
+CONSTRAINT pk_libro PRIMARY KEY(isbn)
 )ENGINE=InnoDb;
 
 
 CREATE TABLE oferta(
 id_oferta       int(255) auto_increment not null,
-isbn            int(255) not null,
+isbn            varchar(255) not null,
 descuento       int(2) not null,
 new_precio      float(100,2) not null,
     
@@ -66,7 +56,7 @@ CONSTRAINT fk_pedido_usuario FOREIGN KEY (id_usuario) REFERENCES usuario(id_usua
 CREATE TABLE pedidos_libros (
 id_pedido_libro  int(255) auto_increment not null,
 nro_pedido       int(255),
-isbn             int(255) not null,
+isbn             varchar(255) not null,
 unidades         int(255) not null,
     
 CONSTRAINT pk_pedidos_libros PRIMARY KEY (id_pedido_libro),

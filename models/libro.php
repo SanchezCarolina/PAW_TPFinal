@@ -2,7 +2,7 @@
 
 class Libro{
     private $isbn;
-    private $id_genero;
+    private $genero;
     private $titulo;
     private $autor;
     private $portada;
@@ -25,8 +25,8 @@ class Libro{
         return $this->isbn;
     }
 
-    function getId_genero() {
-        return $this->id_genero;
+    function getGenero() {
+        return $this->genero;
     }
 
     function getTitulo() {
@@ -61,8 +61,8 @@ class Libro{
         $this->isbn = $isbn;
     }
 
-    function setId_genero($id_genero) {
-        $this->id_genero = $id_genero;
+    function setGenero($genero) {
+        $this->genero = $genero;
     }
 
     function setTitulo($titulo) {
@@ -97,5 +97,34 @@ class Libro{
     public function getAll(){
         $libros = $this->db->query("select * from libro order by fecha_carga desc");
         return $libros;
+    }
+    
+    //devuelve solo el libro que corresponde a un determinado ISBN
+    //se utiliza para completar el formulario cuando se quiere modificar algun dato
+     public function getOne(){
+        $libro = $this->db->query("select * from libro where isbn = {$this->getIsbn()}");
+        return $libro->fetchObject();
+    }
+    
+    public function save(){
+        $sql = "insert into libro values('{$this->getIsbn()}','{$this->getGenero()}','{$this->getTitulo()}','{$this->getAutor()}','{$this->getPortada()}','{$this->getFecha_carga()}',{$this->getPrecio()},{$this->getStock()},'{$this->getReseña()}')";
+        $save = $this->db->query($sql);
+       
+        $result = false;
+        if($save){
+            $result = true;
+        }
+        return $result;
+    }
+    
+    public function delete(){
+        $sql = "delete from libro where isbn = {$this->isbn}";
+        $delete = $this->db->query($sql);
+        
+        $result = false;
+        if($delete){
+            $result = true;
+        }
+        return $result;
     }
 }    

@@ -82,17 +82,7 @@ class Usuario{
         $login->execute();
         $count = $login->rowCount();
         $row = $login->fetch(PDO::FETCH_OBJ);
-        /*
-        if($count == 1 && !empty($row)){
-            $verify = password_verify($password,$row->password);
-            if($verify){
-                $result = $row;
-            }    
-        }
-         * 
-         */
-     
-        //if($login && $login->rowCount() === 1){
+       
         if($count == 1 && !empty($row)){
             $usuario = $row;
             
@@ -101,7 +91,6 @@ class Usuario{
             if($password == $usuario->password){
                 $verify = true;
             }
-            //$verify = password_verify($password,$usuario->password);
             
             if($verify){
                 $result = $usuario;

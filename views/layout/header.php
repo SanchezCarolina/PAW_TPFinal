@@ -5,13 +5,15 @@
         <title>Libreria Dracarys</title>
         <!--ESTILOS CSS -->
         <link rel="stylesheet" type="text/css" href="<?=base_url?>assets/css/styles.css">
-        <!-- jQuery -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<!-- Slider --> 
+        
+		
+        <!-- Slider 
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 		<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-		<!-- Mis Scripts -->
+	--> 	
+        <!-- Mis Scripts 
 		<script type="text/javascript" src="<?=base_url?>assets/js/main.js"></script>
+        -->
     </head>
     <body>
         <div id="contenedorPrincipal">
@@ -21,11 +23,6 @@
                     <img src="<?=base_url?>assets/img/logo3.png">
                     <a>Libreria Dracarys</a>
                 </div>
-                <!--
-                <div id="buscador">
-                    aca va el buscador
-                </div>
-                -->
                 <!--BOTONES-->
                 <?php if(!isset($_SESSION['identity'])):?>
                 <div id="botones">

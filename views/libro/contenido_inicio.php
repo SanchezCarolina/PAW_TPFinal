@@ -1,10 +1,10 @@
                 <div id="slider">
+                    
                     <div class="galeria">
-                        <div><img src="<?=base_url?>assets/img/imagen1.jpg" ></div>
-                        <div><img src="<?=base_url?>assets/img/imagen3.jpg" ></div>
-                        <div><img src="<?=base_url?>assets/img/imagen5.jpg"></div>
-                        <div><img src="<?=base_url?>assets/img/imagen4.jpg"></div>
+                        <div><img src="<?=base_url?>assets/img/imagen1.jpg" height="250" width="100%"></div>
+                        
 				    </div>
+                   
                 </div>
                 <div id="masVendidos">
                     <h2>Más vendidos</h2>
