@@ -1,5 +1,4 @@
 <?php
-
 class Libro{
     private $isbn;
     private $genero;
@@ -99,10 +98,20 @@ class Libro{
         return $libros;
     }
     
+    public function getSearch($search){
+        $libros = $this->db->query("select * from libro where (titulo like '%$search%') or (autor like '%$search%')");
+        return $libros;
+    }
+    
     //devuelve solo el libro que corresponde a un determinado ISBN
      public function getOne(){
-        $libro = $this->db->query("select * from libro where isbn = {$this->getIsbn()}");
+        $libro = $this->db->query("select * from libro where isbn = '{$this->getIsbn()}'");
         return $libro->fetchObject();
+    }
+    
+    public function getOnePrecio($isbn){
+        $precio = $this->db->query("select precio from libro where isbn = $isbn");
+        return $precio->fetchObject()->precio;
     }
     
     public function getRecientes($limit){
@@ -110,6 +119,14 @@ class Libro{
         return $libros;
     }
     
+    public function existeEnPedido(){
+        $sql = "select p.*,pl.* from pedido p "
+                . "inner join pedidos_libros pl "
+                . "on p.nro_pedido = pl.nro_pedido "
+                . "where p.nro_pedido in(select nro_pedido from pedidos_libros where pl.isbn = {$this->isbn})";
+        $libro = $this->db->query($sql);
+        return $libro->fetchObject();
+    }
     public function save(){
         $sql = "insert into libro values('{$this->getIsbn()}','{$this->getGenero()}','{$this->getTitulo()}','{$this->getAutor()}','{$this->getPortada()}','{$this->getFecha_carga()}',{$this->getPrecio()},{$this->getStock()},'{$this->getResenia()}')";
         $save = $this->db->query($sql);
@@ -133,7 +150,7 @@ class Libro{
     }
     
     public function delete(){
-        $sql = "delete from libro where isbn = {$this->isbn}";
+        $sql = "delete from libro where isbn = '{$this->isbn}'";
         $delete = $this->db->query($sql);
         
         $result = false;
@@ -141,5 +158,14 @@ class Libro{
             $result = true;
         }
         return $result;
+    }
+    
+    public function getMasVendidos($limit){
+        $sql = "SELECT l.*, COUNT( pl.isbn ) AS titulos "
+                ."FROM  libro l inner join pedidos_libros pl on l.isbn = pl.isbn"
+                . " GROUP BY pl.isbn "
+                ."ORDER BY titulos DESC limit $limit";
+        $vendidos = $this->db->query($sql);
+        return $vendidos;
     }
 }    

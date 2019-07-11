@@ -1,3 +1,4 @@
+<a href="<?=base_url?>libro/gestion"><div class="btnVolverCarrito"><</div></a>
 <?php if(isset($edit) && isset($lib) && is_object($lib)):?>
     <h2>Editar libro "<?=$lib->titulo?>"</h2>
     <?php $url_action = base_url."libro/save&isbn=".$lib->isbn;?>
@@ -38,10 +39,10 @@
         <input type="date" name="fecha_carga" id="fecha_carga" value="<?= isset($lib) && is_object($lib) ? $lib->fecha_carga : '' ?>">
 
         <label for="precio">Precio:</label>
-        <input type="number" name="precio" id="precio" value="<?= isset($lib) && is_object($lib) ? $lib->precio : '' ?>">
+        <input type="number" name="precio" id="precio" value="<?= isset($lib) && is_object($lib) ? $lib->precio : '' ?>" min="1" max="10000">
 
         <label for="stock">Stock:</label>
-        <input type="number" name="stock" id="stock" value="<?= isset($lib) && is_object($lib) ? $lib->stock : '' ?>">
+        <input type="number" name="stock" id="stock" value="<?= isset($lib) && is_object($lib) ? $lib->stock : '' ?>" min="1" max="10000" step="1">
 
         <input type="submit" value="Guardar">
     </form>

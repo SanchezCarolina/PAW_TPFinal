@@ -16,43 +16,69 @@ a{
     text-decoration: none;
 }
 
+.strongAvisos{
+    display: block;
+}
+
 h1{
+    margin-top: 5px;
     font-size: 30px;
+    color: #C70039;
+    text-align: center;
+}
+
+h2{
+    font-size: 25px;
+    margin: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+    color: #581845;
+}
+
+.divH2{
+    text-align: left;
+    color: #581845;
+}
+h3{
+    margin-top: 8px;
+    font-size: 25px;
     color: #6B7A8F;
+    text-align: center; 
 }
 
 /*HEADER*/
 #header{
     height: 145px;
-    background-color: #b4ceb3;
-    border: 3px solid #6B7A8F;
+    background-color: #C70039;
+    border: 3px solid #900C3F;
 }
 
 #logo{
     margin:5px;
-    padding: 20px;
+    padding:5px;
     float:left;
 }
 
 #logo img{
     float:left;
-    height: 90px;
+    height: 128px;
 }
 
 #logo a{
     float: left;
     margin-top:10%;
     font-family: "Cardinal";
-    font-size: 32px;
-    text-shadow: 0px 2px 1px #FFF;
+    font-size: 54px;
+    text-shadow: 0px 1px 1px #FFF;
 }
 
 /*BOTONES*/
 #botones{
     clear: right;
     float:right;
-    width: 30%;
-    height: 25px;
+    width: 300px;
+    height: auto;
     display: block;
 }
 
@@ -65,47 +91,37 @@ h1{
     margin-top: 10px;
     text-align: center;
     line-height: 15px;
-    font-size: 16px;
-    background-color: #F7882F;
-    border: 1px solid #6B7A8F;
-    color:white;
+    font-size: 15px;
+    background-color: #581845;
+    border: 1px solid #900C3F;
     cursor: pointer;
     display: block;
+    border-radius: 7px;
 }
 
 .boton:hover{
-    background: #6B7A8F;
-    border: 1px solid #F7882F;
+    background: #FF5733;
+    border: 1px solid #FF5733;
 }
 
-.boton a{
-    color: white;
+a .boton{
+    color: #C70039;
     text-decoration: none;
+    font-weight: bold;
 }
 
-.botonAccion{
-    margin-bottom: 0px;
+#a_oferta{
+    font-size:14px;
+}
+.btnAcciones{
+    background: #EAB300;
+    border: 1px solid #EAB300;
+    margin-right: 6px;
 }
 
-.btnRojo{
-    background: red;
-    border: 1px solid red;
-}
-
-.btnRojo:hover{
-    background: red;
-    border: 1px solid red;
-}
-
-.btnVerde{
-    background: green;
-    border: 1px solid green;
-    margin-right: 10px;
-}
-
-.btnVerde:hover{
-    background: #34bd34;
-    border: 1px solid #34bd34;
+.btnAcciones:hover{
+    background: #FFC300;
+    border: 1px solid #FFC300;
 }
 
 .botonSmall{
@@ -121,10 +137,10 @@ h1{
 #menu{
     clear: both;
     width: 100%;
-    background: #6B7A8F;
+    background: #581845;
     color: white;
     height: 55px;
-    border-bottom: 4px solid #F7882F;
+    border-bottom: 4px solid #900C3F;
 }
 
 #menu ul{
@@ -135,19 +151,19 @@ h1{
     display: block;
 }
 
-#menu ul li{
+#menu ul a{
     line-height: 55px;
     float:left;
-    border-right: 1px solid #F7882F;
+    border-right: 1px solid #900C3F;
     transition: all 300ms;
 }
 
-#menu ul li:first-child{
-   border-left: 1px solid #F7882F; 
+#menu ul a:first-child{
+    border-left: 1px solid #900C3F; 
 }
 
-#menu ul li:hover{
-    background:  #F7882F;
+#menu ul a:hover{
+    background:  #FF5733;
 }
 
 #menu a{
@@ -164,31 +180,146 @@ h1{
     margin: 0px auto;
     width: 100%;
     overflow: hidden;
-    background: white;
+    background: #ccc;
     min-height: 450px;
 }
+
+/*CARRUSEL DE IMAGENES*/
 #slider{
     clear: both;
     margin: 0px auto;
     margin-top: 5px;
     width: 100%;
     height: 265px;
-    background-color: aliceblue;
+    background-color: #ccc;
 }
 
-.bx-wrapper, .bx-viewport{
-    height: 250px !important;
+section{
+    display: block;
 }
 
-h2{
-    font-size: 25px;
-    color: #F7C331;
-    margin: 10px;
-    margin-top: 10px;
+.container{ 
+    width: 210px;
+    height: 140px;
+    position: relative;
+    margin: 0 auto 40px;
+
+    -webkit-perspective: 1100px;
+    -moz-perspective: 1100px;
+    perspective: 1100px;
+}
+
+#carousel{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-transform: translateZ( -288px );
+    -moz-transform: translateZ( -288px );
+    transform: translateZ( -288px );
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform 1s;
+    -moz-transition: -moz-transform 1s;
+    transition: transform 1s;
+    -webkit-animation: rotateInY 40s infinite linear;
+    -moz-animation: rotateInY 40s infinite linear;
+    animation: rotateInY 40s infinite linear;
+}
+
+#carousel figure {
+    display: block;
+    position: absolute;
+    width: 140px;
+    height: 210px;
+    left: 10px;
+    top: 10px;
+    line-height: 116px;
+    font-size: 80px;
     font-weight: bold;
+    color: white;
+    text-align: center;
+    margin: 0;
 }
 
-.alert_green{
+/*#carousel figure:nth-child(1) { background: hsla(   0, 100%, 50%, 0.8 ); }
+#carousel figure:nth-child(2) { background: hsla(  40, 100%, 50%, 0.8 ); }
+#carousel figure:nth-child(3) { background: hsla(  80, 100%, 50%, 0.8 ); }
+#carousel figure:nth-child(4) { background: hsla( 120, 100%, 50%, 0.8 ); }
+#carousel figure:nth-child(5) { background: hsla( 160, 100%, 50%, 0.8 ); }
+#carousel figure:nth-child(6) { background: hsla( 200, 100%, 50%, 0.8 ); }
+#carousel figure:nth-child(7) { background: hsla( 240, 100%, 50%, 0.8 ); }
+#carousel figure:nth-child(8) { background: hsla( 280, 100%, 50%, 0.8 ); }
+#carousel figure:nth-child(9) { background: hsla( 320, 100%, 50%, 0.8 ); }*/
+
+#carousel figure:nth-child(1) {
+    -webkit-transform: rotateY(   0deg ) translateZ( 288px );
+    -moz-transform: rotateY(   0deg ) translateZ( 288px );
+    transform: rotateY(   0deg ) translateZ( 288px );
+}
+#carousel figure:nth-child(2) {
+    -webkit-transform: rotateY(  40deg ) translateZ( 288px );
+    -moz-transform: rotateY(  40deg ) translateZ( 288px );
+    transform: rotateY(  40deg ) translateZ( 288px );
+}
+#carousel figure:nth-child(3) {
+    -webkit-transform: rotateY(  80deg ) translateZ( 288px );
+    -moz-transform: rotateY(  80deg ) translateZ( 288px );
+    transform: rotateY(  80deg ) translateZ( 288px );
+}
+#carousel figure:nth-child(4) {
+    -webkit-transform: rotateY( 120deg ) translateZ( 288px );
+    -moz-transform: rotateY( 120deg ) translateZ( 288px );
+    transform: rotateY( 120deg ) translateZ( 288px );
+}
+#carousel figure:nth-child(5) {
+    -webkit-transform: rotateY( 160deg ) translateZ( 288px );
+    -moz-transform: rotateY( 160deg ) translateZ( 288px );
+    transform: rotateY( 160deg ) translateZ( 288px );
+}
+#carousel figure:nth-child(6) {
+    -webkit-transform: rotateY( 200deg ) translateZ( 288px );
+    -moz-transform: rotateY( 200deg ) translateZ( 288px );
+    transform: rotateY( 200deg ) translateZ( 288px );
+}
+#carousel figure:nth-child(7) {
+    -webkit-transform: rotateY( 240deg ) translateZ( 288px );
+    -moz-transform: rotateY( 240deg ) translateZ( 288px );
+    transform: rotateY( 240deg ) translateZ( 288px );
+}
+#carousel figure:nth-child(8) {
+    -webkit-transform: rotateY( 280deg ) translateZ( 288px );
+    -moz-transform: rotateY( 280deg ) translateZ( 288px );
+    transform: rotateY( 280deg ) translateZ( 288px );
+}
+#carousel figure:nth-child(9) {
+    -webkit-transform: rotateY( 320deg ) translateZ( 288px );
+    -moz-transform: rotateY( 320deg ) translateZ( 288px );
+    transform: rotateY( 320deg ) translateZ( 288px );
+}
+
+.portadaFigure{
+    width: 135px;
+    height: 205px;
+}
+@keyframes rotateInY {
+    0%   { transform: translateZ(-288px) rotateY(0deg);   }
+    100% { transform: translateZ(-288px) rotateY(360deg);    }
+}
+
+@-webkit-keyframes rotateInY {
+    0%   { -webkit-transform: -webkit-translateZ(-288px) rotateY(0deg);   }
+    100% { -webkit-transform: -webkit-translateZ(-288px) rotateY(360deg);    }
+}
+
+@-moz-keyframes rotateInY {
+    0%   { -moz-transform: -moz-translateZ(-288px) rotateY(0deg);   }
+    100% { -moz-transform: -moz-translateZ(-288px) rotateY(360deg);    }
+}
+/*--------------------------------*/
+
+
+/*.alert_green{
     clear: both;
     color:green !important;
     text-align: center;
@@ -202,8 +333,15 @@ h2{
     text-align: center !important;
     font-size: 20px !important;
     font-weight: bold !important;
-}
+}*/
 
+.alerta_aviso{
+    clear: both;
+    color: #FF5733;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
 #clear{
     clear: both;
 }
@@ -217,22 +355,16 @@ h2{
 
 .portada{
     width: 130px;
-    height: auto;
+    height: 190px;
     margin-left: 20px;
 }
 
 .portada:hover{
     width: 140px;
+    height: 200px;
     transition: all 300ms;
 }
 
-#divRegistro h2{
-    text-align: center;
-}
-
-#divLogin h2{
-    text-align: center;
-}
 /*FORMULARIOS*/
 label,
 input[type="text"],
@@ -251,7 +383,7 @@ select, textarea{
 }
 
 label{
-    color: #6B7A8F;
+    color: #581845;
     font-size: 18px;
     margin: 0px auto;
 }
@@ -292,9 +424,14 @@ input[type="submit"]{
     padding-left: 10px;
     padding-right: 10px;
     color: white;
-    background: #F7882F;
-    border: 1px solid #F7882F;
+    background: #581845;
+    border: 1px solid #581845;
+    font-weight: bold;
     cursor:pointer;
+}
+
+#submitLogin{
+    width: 60%;
 }
 
 #login{
@@ -313,13 +450,17 @@ label{
 /*VISTA ADMIN*/
 #vistaAdmin{
     height: 80px;
-    width: 80%;
+    width: 580px;;
     margin: 0px auto;
 }
 
+.btnAccionAdmin{
+    width: 150px;
+}
 #opciones li{
     margin-top: 15px;
 }
+
 #opciones li a{
     text-decoration: none;
     padding: 5px;
@@ -330,34 +471,33 @@ label{
     display: block;
     text-align: center;
     cursor: pointer;
+    color: white;
+    font-weight: bold;
 }
 
-#tablaGestionLibro,
-#tablaGenero{
+#tablaGestionLibro{
     margin: 4px;
     text-align: center;
     width: 99%;
-    border: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
 
-#tablaGestionLibro td,
-#tablaGenero td{
+#tablaGestionLibro td{
     border-top: 1px solid #ccc;
     padding: 2px;
 }
 
+
 #tablaGenero th,
 #tablaGestionLibro th{
-    color: #F7882F;
-}
-#divGestionLibro h2{
-    text-align: center;
+    color: #FF5733;
+    font-weight: bold;
+    padding: 2px;
 }
 
 .botonAdmin{
     margin-bottom: 20px;
     margin-left: 20px;
-    height: auto;
 }
 
 .btnVolver{
@@ -371,7 +511,7 @@ label{
 }
 
 #search{
-    width: 90%;
+    width: 30%;
     height: 25px;
 }
 #miSelect{
@@ -380,13 +520,37 @@ label{
 
 #button{
     margin-top:10px;
-    margin-left: 10px;
+    margin-left: 5x;
 }
+
 h4{
     margin-top: 10px;
     font-size: 20px;
     font-weight: bold;
     color: #6B7A8F;
+}
+/*VISTA LIBROS GENERAL*/
+#seccionFiltros{
+    width: 97%;
+    height: 50px;
+    margin-left: 30px;
+}
+
+#btnBuscar{
+    float: left;
+    width: 40px;
+    padding: 5px;
+    margin: 9px;
+    background-color: #ccc;
+    border-color: #ccc;
+    background-image: url("../img/search.png");
+    background-size: 20px;
+    background-repeat: no-repeat;
+}
+
+.busqueda{
+    float: left;
+    margin-top: 5px;
 }
 
 /*VISTA LIBRO INDIVIDUAL*/
@@ -412,7 +576,7 @@ h4{
     float: left;
 }
 
-p{
+#datosLibro p{
     margin-top: 10px;
     margin-bottom: 10px;
     padding-top: 10px;
@@ -423,7 +587,7 @@ p{
 .titulosDatos{
     font-size: 22px;
     font-weight: bold;
-    color: #6B7A8F;
+    color: #C70039;
 }
 
 #description{
@@ -436,6 +600,184 @@ p{
 #pResenia{
     font-size: 20px;
 }
+
+div.botonLibIndividual{
+    width: 210px;
+    height: 40px;
+    margin-top: -10px;
+}
+/*CARRITO*/
+
+.imgCarrito{
+    height: 70px;
+    display: block;
+    margin: 10px auto;
+
+}
+
+#resumenCarrito{
+    width: 295px;
+    float: right;
+}
+
+#deleteCarrito{
+    width: 295px;
+    float: left;
+}
+
+#resumenCarrito h3{
+    font-size: 18px;
+    margin-top:10px;
+    float: left;
+    font-weight: bold;
+}
+
+.btnPedido{
+    width: 120px;
+    display: block;
+    float: right;
+    font-size: 17px;
+    margin-top: 5px;
+}
+
+.btnDelete{
+    width: 120px;
+    display: block;
+    float: left;
+    font-size: 18px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.btnQuitar{
+    width: 80%;
+    text-align: center;
+    margin: 0px auto;
+    margin: 5px;
+}
+
+.td_a{
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.btnVolverCarrito{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    margin: 5px;
+    margin-left: 10px;
+    text-align: center;
+    background: #EAB300;
+    border: 1px solid #EAB300; 
+    color: white;
+    font-size:30px;
+}
+
+.updown_unidades {
+    width: 76px;
+    margin: 0px auto;
+}
+
+.updown_unidades .botonUnidades{
+    display: block;
+    width: 20px;
+    float: left;
+    background-color: #6B7A8F;
+    padding: 2px;
+    margin: 7px;
+}
+.parrafo{
+    text-align: center;
+    font-size: 17px;
+    color: #6B7A8F;
+}
+
+.pPedido{
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    margin: 5px;
+    margin-left: 10px;
+}
+
+.a_pedido{
+    color: black;
+}
+
+.a_pedido:hover{
+    text-decoration: underline;
+}
+
+#detalleH3{
+    text-align: left;
+    margin-left: 10px;
+}
+
+#selectDetalle{
+    margin: 10px;
+    width: 98%;
+}
+
+#detalleSubmit{
+    margin: 10px;
+}
+
+#accionesOferta{
+    width: 220px;
+    margin: 0px auto;
+}
+
+/*PAGINACIÓN*/
+ul.paginacion {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.paginacion li {display: inline;}
+
+ul.paginacion li a {
+    color: white;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #581845;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    margin: 0 4px; 
+    margin-bottom: 5px;
+}
+
+
+ul.paginacion li a.active {
+    background-color: #FF5733;
+    color: white;
+    border-radius: 5px;
+
+}
+
+div.center{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+ul.paginacion li a:hover:not(.active){
+    background-color: #900C3F;
+}
+
+.paginacion li:first-child a {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.paginacion li:last-child a {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
 /*FOOTER*/
 #footer{
     clear: both;
@@ -443,7 +785,7 @@ p{
     width: 100%;
     padding-top:10px;
     padding-bottom: 10px;
-    color: black;
-    background: #b4ceb3;
-    border-top: 3px solid #F7882F;
+    color: white;
+    background: #581845;
+    border-top: 3px solid #900C3F;
 }

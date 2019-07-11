@@ -1,13 +1,17 @@
 <?php
 
 require_once 'models/libro.php';
-
+require_once 'models/oferta.php';
 class libroController{
     
     public function index(){
         $libro = new Libro();
         $libros = $libro->getRecientes(5);
-        
+        $oferta = new Oferta();
+        $ofertas = $oferta->getOfertasInicio(9);
+        $vendido = new Libro();
+        $vendidos = $libro->getMasVendidos(5);
+       
         require_once 'views/libro/contenido_inicio.php';
     }
     
@@ -15,12 +19,18 @@ class libroController{
         Utils::isAdmin();
         $libro = new Libro();
         $libros = $libro->getAll();
+        
         require_once 'views/libro/gestion.php';
     }
     
     public function verLibros(){
         $libro = new Libro();
         $libros = $libro->getAll();
+        $libros_x_pagina = 5;
+        $total_libros_bd = $libros->rowCount();
+        $paginas = $total_libros_bd / $libros_x_pagina;
+        $paginas = ceil($paginas);
+        
         require_once 'views/libro/verLibros.php';
     }
     
@@ -30,9 +40,25 @@ class libroController{
             $libro = new Libro();
             $libro->setIsbn($isbn);
             
+            $oferta = new Oferta();
+            $oferta->setIsbn($isbn);
+            
+            $ofer = $oferta->getOneLibroOferta();
+            //$ofer = $oferta->getOne();
+            //var_dump($ofer);
             $lib = $libro->getOne();
+            if($ofer){
+                //var_dump(true);
+                require_once 'views/libro/oferta/verOfertaIndividual.php';
+            }else{
+                //var_dump(false);
+                require_once 'views/libro/verLibroIndividual.php';
+            }
+            //var_dump($lib->isbn);
+            //var_dump(Utils::isEnOferta($isbn));
+            
         }
-        require_once 'views/libro/verLibroIndividual.php';
+        //require_once 'views/libro/verLibroIndividual.php';
     }
     
     public function cargar(){
@@ -66,19 +92,31 @@ class libroController{
                 $libro->setStock($stock);
                 $libro->setResenia($resenia);
                 
+                $lib = $libro->getOne();
+                
                 if(isset($_GET['isbn'])){
                     $isbn = $_GET['isbn'];
                     $libro->setIsbn($isbn);
                    
                     $save = $libro->edit(); //guardo en la BD los cambios que me llegan (actualizo datos)
+                    
+                    if($save){
+                        $_SESSION['edit'] = 'complete';
+                    }else{
+                        $_SESSION['edit'] = 'failed';
+                    }
+                    
                 }else{
-                    $save = $libro->save(); //creo un nuevo libro en la BD (inserto datos)
-                }
-                
-                if($save){
-                    $_SESSION['libro'] = 'complete';
-                }else{
-                    $_SESSION['libro'] = 'failed';
+                    if($lib){
+                        $save = false;
+                    }else{
+                        $save = $libro->save(); //creo un nuevo libro en la BD (inserto datos)
+                    }
+                    if($save){
+                        $_SESSION['libro'] = 'complete';
+                    }else{
+                        $_SESSION['libro'] = 'failed';
+                    }
                 }
             }
             else{
@@ -115,8 +153,13 @@ class libroController{
             $libro = new Libro();
             $libro->setIsbn($isbn);
             
+            $oferta = new Oferta();
+            $oferta->setIsbn($isbn);
+            
+            $ofer = $oferta->delete();
             $delete = $libro->delete();
-            if($delete){
+            
+            if($delete && $ofer){
                 $_SESSION['delete'] = 'complete';
             }else{
                 $_SESSION['delete'] = 'failed';
@@ -128,5 +171,27 @@ class libroController{
         header("Location:".base_url."libro/gestion");
     }
     
+    public function filtrar(){
+        if(isset($_POST)){
+            $search = isset($_POST['search']) ? $_POST['search'] : false;
+            
+            $libro = new Libro();
+            $filtro = $libro->getSearch($search);
+            
+            //var_dump($filtro);
+            require_once 'views/libro/verLibros.php';
+        }
+    }
+    
+    public function vista(){
+        if (isset($_GET['isbn'])) {
+            $isbn = $_GET['isbn'];
+            
+            require_once 'views/libro/vistaPrevia.php';
+
+        } else {
+            header("Location: " . base_url);
+        }
+    }
     
 }

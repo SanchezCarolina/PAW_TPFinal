@@ -1,9 +1,9 @@
-<div id="divRegistro"><h2>Registrarse como nuevo usuario</h2></div>
+<h2>Registrarse como nuevo usuario</h2>
 
 <?php if(isset($_SESSION['register']) && $_SESSION['register'] == 'complete'):?>
-    <strong class="alert_green" style="color: green; font-weight:bold; text-align: center">Registro completado correctamente!</strong>
+    <strong class="alerta_aviso strongAvisos">Registro completado correctamente!</strong>
 <?php elseif(isset($_SESSION['register']) && $_SESSION['register'] == 'failed'): ?>
-    <strong class="alert_red" style="color: red; font-weight:bold; text-align: center">Registro fallido! Introduzca bien los datos</strong>
+    <strong class="alerta_aviso strongAvisos">Registro fallido! Introduzca bien los datos</strong>
 <?php endif; ?>
 <?php Utils::deleteSession('register'); ?>
 

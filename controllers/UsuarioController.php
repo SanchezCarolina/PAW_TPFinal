@@ -16,6 +16,7 @@ class usuarioController{
     }
     
     public function admin(){
+        Utils::isAdmin();
         require_once 'views/usuario/admin.php';
     }
     
@@ -89,5 +90,14 @@ class usuarioController{
         }
         
         header("Location:".base_url);
+    }
+    
+    public function contacto(){
+        require_once 'views/usuario/contacto.php';
+    }
+    
+    public function recibirFormContacto(){
+        require_once 'views/usuario/enviarCorreo.php';
+    
     }
 }//fin de la clase

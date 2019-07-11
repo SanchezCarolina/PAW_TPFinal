@@ -26,12 +26,57 @@ class Utils{
         }
     }
     
-    /*
-    public static function showGeneros(){
-        require_once 'models/genero.php';
-        $genero = new Genero();
-        $generos = $genero->getAll();
-        return $generos;
+    
+    public static function statsCarrito(){
+        $stats = array(
+            'count'=>0,
+            'total'=>0
+        );
+        
+        if(isset($_SESSION['carrito'])){
+            $stats['count'] = count($_SESSION['carrito']);
+            
+            foreach ($_SESSION['carrito'] as $libro){
+                $stats['total'] += $libro['precio']*$libro['unidades'];
+            }
+        }
+        return $stats;
     }
-     * */
+    
+    public static function showStatus($status){
+        $value = 'Pendiente';
+        switch ($status) {
+            case "confirm":
+                $value = 'Pendiente';
+                return $value;
+                break;
+            case "preparation":
+                $value = 'En preparación';
+                return $value;
+                break;
+            case "ready":
+                $value = 'Preparado para enviar';
+                return $value;
+                break;
+            case "sended":
+                $value = 'Enviado';
+                return $value;
+                break;
+            default:
+                return $value;
+                break;
+        }
+    }
+    
+    public static function noStock($s){
+        return $s;
+    }
+    
+    public static function showLibros($isbn){
+        require_once 'models/libro.php';
+        $libro = new Libro();
+        $precio = $libro->getOnePrecio($isbn);
+        return $precio;
+    }
+ 
 }

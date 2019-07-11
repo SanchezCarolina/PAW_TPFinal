@@ -45,8 +45,13 @@ nro_pedido      int(255) auto_increment not null,
 id_usuario      int(255),
 monto           float(100,2) not null,
 fecha           date,
-unidades        int(255) not null,
+hora            time,
 estado          varchar(255) not null,
+provincia       varchar(255) not null,
+localidad       varchar(255) not null,
+direccion       varchar(255) not null,
+cod_postal      varchar(20) not null,
+
     
 CONSTRAINT pk_pedido PRIMARY KEY (nro_pedido),
 CONSTRAINT fk_pedido_usuario FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
