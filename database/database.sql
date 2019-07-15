@@ -1,4 +1,4 @@
-CREATE DATABASE libreria;
+CREATE DATABASE libreria CHARACTER SET 'UTF8' COLLATE 'utf8_spanish2_ci';
 USE libreria;
 
 CREATE TABLE usuario(
@@ -23,7 +23,7 @@ portada         varchar(255),
 fecha_carga     date not null,
 precio          float (100,2) not null,
 stock           int(255) not null,
-resenia         varchar(2000) not null,
+resenia         varchar(3000) not null,
 
 CONSTRAINT pk_libro PRIMARY KEY(isbn)
 )ENGINE=InnoDb;

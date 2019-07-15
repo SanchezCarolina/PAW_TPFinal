@@ -6,7 +6,7 @@
     <h2>Cargar nuevo libro</h2>
     <?php $url_action = base_url."libro/save";?>
     <div id="buscarLibroCargar">
-        <input id="search" placeholder="Titulo o autor del libro">
+        <input id="cargaLibro" placeholder="Titulo o autor del libro">
         <button id="button" class="botonSmall"></button>
         <h4>Resultados para su búsqueda</h4>
         <div id="divSelect">

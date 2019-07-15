@@ -3,7 +3,7 @@ var search,
     result;
 
 function bookSearch(){
-    search = document.getElementById('search').value;
+    search = document.getElementById('cargaLibro').value;
     result = document.getElementById('buscarLibroCargar');
     console.log(search);
 

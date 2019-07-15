@@ -1,7 +1,8 @@
-<a href="<?=base_url?>usuario/admin"><div class="btnVolverCarrito"><</div></a>
 <?php if (isset($gestion)): ?>
+    <a href="<?=base_url?>usuario/admin"><div class="btnVolverCarrito"><</div></a>
     <h2>Gestionar pedidos</h2>
-<?php else: ?>
+<?php else: ?>  
+    <a href="<?=base_url?>libro/index"><div class="btnVolverCarrito"><</div></a>
     <h2>Mis pedidos</h2>
 <?php endif; ?>    
 <table id="tablaGestionLibro">

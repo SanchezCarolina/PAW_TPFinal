@@ -21,7 +21,7 @@
                     <?php if ($elemento['unidades'] <= $libro->stock): ?>
                         <?= $elemento['unidades'] ?>
                     <?php else: ?>
-                        <h2 class="alert_red">No hay stock suficiente</h2>
+                        <h2 class="alerta_aviso">No hay stock suficiente</h2>
                         <?php
                         $sinStock = true;
                         ?>
@@ -31,7 +31,7 @@
                         <a href="<?= base_url ?>/carrito/down&index=<?= $indice ?>" class="botonUnidades td_a">-</a>
                     </div>
                 </td>
-                <td><a href="<?= base_url ?>carrito/remove&index=<?= $indice ?>" class="td_a"><div class="boton btnQuitar btnAcciones">Quitar producto</div></a></td>
+                <td><a href="<?= base_url ?>carrito/remove&index=<?= $indice ?>"><div class="btnQuitar"></div></a></td>
             </tr>
         <?php endforeach; ?>
     </table>

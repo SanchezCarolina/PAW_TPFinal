@@ -50,9 +50,11 @@
             <td><?=$lib->stock;?></td>
             <td><?=$lib->fecha_carga;?></td>
             <td>
-                <a href="<?=base_url?>libro/editar&isbn=<?=$lib->isbn?>"><div class="boton btnAcciones">Editar</div></a>
-                <a href="<?=base_url?>libro/eliminar&isbn=<?=$lib->isbn?>"><div class="boton btnAcciones">Eliminar</div></a>
-                <a href="<?=base_url?>oferta/crearOferta&isbn=<?=$lib->isbn?>" id="a_oferta"><div class="boton btnAcciones">Añadir oferta</div></a>
+                <div class="botonesGestion">
+                    <a href="<?=base_url?>libro/editar&isbn=<?=$lib->isbn?>"><div class="boton btnAcciones">Editar</div></a>
+                    <a href="<?=base_url?>libro/eliminar&isbn=<?=$lib->isbn?>"><div class="boton btnAcciones">Eliminar</div></a>
+                    <a href="<?=base_url?>oferta/crearOferta&isbn=<?=$lib->isbn?>" id="a_oferta"><div class="boton btnAcciones">Añadir oferta</div></a>
+                </div>    
             </td>
         </tr>
     <?php endwhile; ?>

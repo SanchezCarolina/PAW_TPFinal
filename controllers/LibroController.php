@@ -24,13 +24,10 @@ class libroController{
     }
     
     public function verLibros(){
+       
         $libro = new Libro();
         $libros = $libro->getAll();
-        $libros_x_pagina = 5;
-        $total_libros_bd = $libros->rowCount();
-        $paginas = $total_libros_bd / $libros_x_pagina;
-        $paginas = ceil($paginas);
-        
+
         require_once 'views/libro/verLibros.php';
     }
     

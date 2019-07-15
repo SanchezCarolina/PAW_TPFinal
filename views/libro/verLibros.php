@@ -7,34 +7,19 @@
 <?php if (isset($filtro)): ?>
     <?php while ($fil = $filtro->fetchObject()): ?>
         <div class="librosInicio">
-            <a href="<?= base_url ?>libro/verLibroIndividual&isbn=<?= $fil->isbn ?>"><img class="portada" src="<?= $fil->portada ?>"></a> 
+            <a href="<?= base_url ?>libro/verLibroIndividual&isbn=<?= $fil->isbn ?>"><img class="portada" src="<?= $fil->portada ?>"></a>
+            <div id="clear"></div>
+            <strong class="precioPortada">Precio: <strong style="color: black">$<?=$fil->precio?></strong></strong>
+            <a href="<?=base_url?>carrito/add&isbn=<?=$fil->isbn?>"><div class="boton btnAcciones botonPortada">Comprar</div></a>
         </div>
     <?php endwhile; ?>
 <?php else : ?>
-    <?php while ($lib = $libros->fetchObject()): ?>
+    <?php foreach ($libros as $lib): ?>
         <div class="librosInicio">
-            <a href="<?= base_url ?>libro/verLibroIndividual&isbn=<?= $lib->isbn ?>"><img class="portada" src="<?= $lib->portada ?>"></a> 
+            <a href="<?= base_url ?>libro/verLibroIndividual&isbn=<?= $lib['isbn'] ?>"><img class="portada" src="<?= $lib['portada'] ?>"></a> 
+            <div id="clear"></div>
+            <strong class="precioPortada">Precio: <strong style="color: black">$<?=$lib['precio']?></strong></strong>
+            <a href="<?=base_url?>carrito/add&isbn=<?=$lib['isbn']?>"><div class="boton btnAcciones botonPortada">Comprar</div></a>
         </div>
-    <?php endwhile; ?>
+    <?php endforeach; ?>
 <?php endif; ?>
-
-<!--<div id="clear"></div>
-<div class="center">
-    <ul class="paginacion">
-        <?php
-        if(!$_GET){
-            header("Location: ".base_url.'libro/verLibros?pagina=1');
-        }
-        $iniciar = ($_GET['pagina']-1)* $libros_x_pagina;
-        //var_dump($iniciar);
-        
-        ?>
-        <li><a href="<?=base_url?>libro/verLibros?pagina=<?=$pagina-1?>">❮</a></li>
-        
-        <?php for ($i=0; $i<$paginas; $i++):?>
-        <li><a class="" id="a_paginacion" href="<?=base_url?>libro/verLibros?pagina=<?=$i+1?>"><?=$i+1?></a></li>
-        <?php endfor;?>
-        
-        <li><a href="<?=base_url?>libro/verLibros?pagina=<?= $_GET['pagina']+1?>">❯</a></li>
-    </ul> 
-</div>-->

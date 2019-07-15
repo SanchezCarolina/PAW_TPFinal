@@ -5,6 +5,7 @@
         <title>Libreria Dracarys</title>
         <!--ESTILOS CSS -->
         <link rel="stylesheet" type="text/css" href="<?=base_url?>assets/css/styles.css">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0">
     </head>
     <body>
         <div id="contenedorPrincipal">
@@ -34,15 +35,19 @@
                     <a href=<?=base_url?>usuario/logout><div class="boton">Salir</div></a>
                 </div>
                 <?php endif; ?>
-             
             </header>
             <!--MENÚ-->
+            
+            <input type="checkbox" id="btn-menu">
+            <div id="divMenu">
+            <label for="btn-menu" id="labelMenu"><img src="<?=base_url?>/assets/img/menu.png"></label>
+            </div>
             <nav id="menu">
                 <ul>
-                    <a href=<?=base_url?>><li>Inicio</li></a>
-                    <a href="<?=base_url?>libro/verLibros"><li>Libros</li></a>
-                    <a href="<?=base_url?>oferta/verOfertas"><li>Ofertas</li></a>
-                    <a href="<?=base_url?>usuario/contacto"><li>Contacto</li></a>
+                    <li><a href=<?=base_url?>>Inicio</a></li>
+                    <li><a href="<?=base_url?>libro/verLibros">Libros</a></li>
+                    <li><a href="<?=base_url?>oferta/verOfertas">Ofertas</a></li>
+                    <li><a href="<?=base_url?>usuario/contacto">Contacto</a></li>
                 </ul>
             </nav>
             <!--CONTENIDO PRINCIPAL-->

@@ -97,7 +97,7 @@ class Libro{
         $libros = $this->db->query("select * from libro order by fecha_carga desc");
         return $libros;
     }
-    
+   
     public function getSearch($search){
         $libros = $this->db->query("select * from libro where (titulo like '%$search%') or (autor like '%$search%')");
         return $libros;

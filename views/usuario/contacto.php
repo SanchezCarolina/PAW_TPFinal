@@ -1,3 +1,10 @@
+<link rel="stylesheet" href="<?=base_url?>/assets/css/font.css">
+<div class="social-bar">
+    <a href="https://www.facebook.com/libreriaDracarys" class="icon icon-facebook" target="_blank"></a>
+    <a href="https://twitter.com/LibreriaDracar1" class="icon icon-twitter" target="_blank"></a>
+    <a href="https://www.youtube.com/channel/UC-4Km6NA8lhw7_dpsopbx-g?view_as=subscriber" class="icon icon-youtube" target="_blank"></a>
+    <a href="https://www.instagram.com/libreriadracarys/" class="icon icon-instagram" target="_blank"></a>
+  </div>
 <h2>Formulario de contacto</h2>
 
 <?php if(isset($_SESSION['correoEnviado']) && $_SESSION['correoEnviado'] = 'complete'):?>
@@ -6,7 +13,6 @@
 <h2 class="alerta_aviso">Lo sentimos, su mensaje no pudo ser enviado</h2>
 <?php endif;?>
 <?php Utils::deleteSession('correoEnviado'); ?>
-
 <form action="<?=base_url?>usuario/recibirFormContacto" method="post">
     <label for="nombre">Nombre:</label>
     <input type="text" name="nombre" required>

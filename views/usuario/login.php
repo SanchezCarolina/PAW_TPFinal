@@ -7,10 +7,11 @@
         <input type="password" name="password" id="password">
         <input type="submit" value="Iniciar Sesión" id="submitLogin">
     </form>
+    
     <?php if(isset($_SESSION['error_login']) && $_SESSION['error_login'] == 'failed'):?>
     <strong class="alerta_aviso strongAvisos">Login fallido! Vuelva a introducir los datos</strong>
     <?php endif; ?>
     <?php Utils::deleteSession('error_login'); ?>
 </div>
-    
+   
     

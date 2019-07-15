@@ -57,7 +57,7 @@ class Oferta{
     }
     
     public function getLibroOferta(){
-        $sql = "select l.genero,l.titulo,l.autor,l.portada,l.resenia,l.stock,o.new_precio, o.isbn "
+        $sql = "select l.genero,l.titulo,l.autor,l.portada,l.resenia,l.stock,o.new_precio, o.isbn, o.descuento "
                 . "from libro l inner join oferta o "
                 . "on l.isbn = o.isbn";
         $libros = $this->db->query($sql);
@@ -74,7 +74,7 @@ class Oferta{
     }
     
     public function getSearch($search){
-        $sql = "select l.* from libro l "
+        $sql = "select l.*,o.* from libro l "
                 . "inner join oferta o "
                 . "on l.isbn = o.isbn "
                 . "where (l.titulo like '%$search%') or (l.autor like '%$search%')";

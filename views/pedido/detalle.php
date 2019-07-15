@@ -1,4 +1,9 @@
-<a href="<?=base_url?>pedido/gestion"><div class="btnVolverCarrito"><</div></a>
+<?php if (isset($_SESSION['admin'])): ?>
+    <a href="<?=base_url?>pedido/gestion"><div class="btnVolverCarrito"><</div></a>
+<?php else: ?>
+    <a href="<?=base_url?>pedido/mis_pedidos"><div class="btnVolverCarrito"><</div></a>
+<?php endif;?>    
+
 <h2>Detalle del pedido</h2>
 <?php if (isset($pedido)): ?>
     <?php if (isset($_SESSION['admin'])): ?>
