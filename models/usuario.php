@@ -69,20 +69,6 @@ class Usuario{
         return $result;
     }
     
-    public function createUser($payload){ 
-        $sql = "insert into usuario values (null,:id_google,null,null,:email,null,null)";
-        $statement = $this->db->prepare($sql);
-        $statement->bindValue('id_google',$payload['sub']);
-        $statement->bindValue('email',$payload['email']);
-        $statement->execute();
-        
-        $result = false;
-        if($statement){
-            $result = true;
-        }
-        return $result;
-    }
-    
     public function login(){
         $result = false;
         $email = $this->email;
@@ -102,7 +88,7 @@ class Usuario{
             
             //verifico la contraseña
             $verify = false;
-            if($password == $usuario->password){
+            if(password_verify($password, $row->password)){
                 $verify = true;
             }
             

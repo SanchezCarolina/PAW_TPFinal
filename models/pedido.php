@@ -107,6 +107,11 @@ class Pedido{
         return $libros;
     }
     
+    public function getAllPaginacion($desde, $items){
+        $libros = $this->db->query("select * from pedido order by fecha desc limit $desde,$items");
+        return $libros;
+    }
+    
     //devuelve solo el pedido que corresponde a un determinado nro_pedido
      public function getOne(){
         $libro = $this->db->query("select * from pedido where nro_pedido = {$this->getNro_pedido()}");
@@ -122,6 +127,13 @@ class Pedido{
      public function getAllByUser(){
         $sql = "select p.* from pedido p where "
                 . "p.id_usuario = {$this->getId_usuario()} order by p.id_usuario desc";
+        $pedido = $this->db->query($sql);
+        return $pedido;
+     }
+     
+     public function getAllByUserPaginacion($desde,$item){
+        $sql = "select p.* from pedido p where "
+                . "p.id_usuario = {$this->getId_usuario()} order by p.id_usuario desc limit $desde,$item";
         $pedido = $this->db->query($sql);
         return $pedido;
      }

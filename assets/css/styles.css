@@ -5,9 +5,10 @@
     src: url("../fonts/Cardinal.ttf");
 }
 
+/*GENERAL*/
 #contenedorPrincipal{
     width: 75%;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     background-color: #ccc;
     box-shadow: 0 0 1em grey;
@@ -17,347 +18,13 @@ a{
     text-decoration: none;
 }
 
-.strongAvisos{
-    display: block;
-}
-
-h1{
-    margin-top: 5px;
-    font-size: 30px;
-    color: #C70039;
-    text-align: center;
-}
-
 h2{
-    font-size: 25px;
-    margin: 10px;
-    margin-top: 10px;
-    font-weight: bold;
-    text-align: center;
     color: #581845;
-}
-
-.divH2{
-    text-align: left;
-    color: #581845;
-}
-h3{
-    margin-top: 8px;
-    font-size: 25px;
-    color: #6B7A8F;
-    text-align: center; 
-}
-
-/*HEADER*/
-#header{
-    height: 145px;
-    background-color: #C70039;
-    border: 3px solid #900C3F;
-}
-
-#logo{
-    margin:5px;
-    padding:5px;
-    float:left;
-
-}
-
-#logo img{
-    float:left;
-    width: 105px;
-}
-
-#logo a{
-    float: left;
-    margin-top:40px;
-    font-family: "Cardinal";
-    font-size: 54px;
-    text-shadow: 0px 1px 1px #FFF;
-    box-sizing: border-box;
-}
-
-/*BOTONES*/
-#botones{
-    clear: right;
-    float:right;
-    width: 300px;
-    height: auto;
-    display: block;
-}
-
-.boton{
-    width: 88px;
-    height: 20px;
-    float:left;
-    padding: 4px;
-    margin:1px;
-    margin-top: 10px;
     text-align: center;
-    line-height: 15px;
-    font-size: 15px;
-    background-color: #581845;
-    border: 1px solid #900C3F;
-    cursor: pointer;
-    display: block;
-    border-radius: 7px;
-}
-
-.boton:hover{
-    background: #FF5733;
-    border: 1px solid #FF5733;
-}
-
-a .boton{
-    color: #C70039;
-    text-decoration: none;
+    font-size: 1.5em;
     font-weight: bold;
-}
-
-#a_oferta{
-    font-size:14px;
-}
-.btnAcciones{
-    background: #EAB300;
-    border: 1px solid #EAB300;
-    margin-right: 6px;
-}
-
-.btnAcciones:hover{
-    background: #FFC300;
-    border: 1px solid #FFC300;
-}
-
-.botonSmall{
-    padding: 7px;
-    width: 30px;
-    height: 30px;
-    background-color: #ccc;
-    background-image: url("../img/search.png");
-    background-position: center;
-    background-size: 20px;
-    background-repeat: no-repeat;
-}
-
-/*MENU*/
-#btn-menu{
-    display:none;
-    float: left;
-}
-
-#divMenu #labelMenu{
-    float: left;
-    display: none;
-    width: 96%;
-    height: 30px;
     padding: 10px;
-    border-right: 1px solid #900c3f;
-    background: #581845;
 }
-
-#labelMenu:hover{
-    cursor: pointer;
-    background: #FF5733;
-}
-#menu{
-    clear: both;
-    width: 100%;
-    background: #581845;
-    height: 55px;
-    border-bottom: 4px solid #900C3F;
-}
-
-#menu ul{
-    margin: 0;
-    list-style: none;
-    padding: 0;
-    display: flex;
-}
-
-#menu ul li{
-    height: 55px;
-    line-height: 55px;
-    border-right: 1px solid #900C3F;
-    transition: all 300ms;
-}
-
-#menu ul li:hover{
-    background: #FF5733;
-}
-#menu li a{
-    display: block;
-    padding: 15px 20px;
-    color: white;
-    text-decoration: none;
-    line-height: 15px;
-    font-size: 20px;
-}
-
-/*#menu ul a{
-    line-height: 55px;
-    float:left;
-    border-right: 1px solid #900C3F;
-    transition: all 300ms;
-}
-
-#menu ul a:first-child{
-    border-left: 1px solid #900C3F; 
-}*/
-
-/*#menu ul a:hover{
-    background:  #FF5733;
-}
-
-#menu a{
-    display: block;
-    color: white;
-    font-size: 20px;
-    text-decoration: none;
-    padding-left: 12px;
-    padding-right: 12px;
-}*/
-
-/*CONTENIDO CENTRAL*/
-#contenido{
-    margin: 0 auto;
-    width: 100%;
-    overflow: hidden;
-    background: #ccc;
-    min-height: 450px;
-}
-
-/*CARRUSEL DE IMAGENES*/
-#slider{
-    clear: both;
-    margin: 0px auto;
-    margin-top: 5px;
-    width: 100%;
-    height: 265px;
-    background-color: #ccc;
-}
-
-section{
-    display: block;
-}
-
-.container{ 
-    width: 210px;
-    height: 140px;
-    position: relative;
-    margin: 0 auto 40px;
-
-    -webkit-perspective: 1100px;
-    -moz-perspective: 1100px;
-    perspective: 1100px;
-}
-
-#carousel{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    -webkit-transform: translateZ( -288px );
-    -moz-transform: translateZ( -288px );
-    transform: translateZ( -288px );
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-transition: -webkit-transform 1s;
-    -moz-transition: -moz-transform 1s;
-    transition: transform 1s;
-    -webkit-animation: rotateInY 40s infinite linear;
-    -moz-animation: rotateInY 40s infinite linear;
-    animation: rotateInY 40s infinite linear;
-}
-
-#carousel figure {
-    display: block;
-    position: absolute;
-    width: 140px;
-    height: 210px;
-    left: 10px;
-    top: 10px;
-    line-height: 116px;
-    font-size: 80px;
-    font-weight: bold;
-    color: white;
-    text-align: center;
-    margin: 0;
-}
-
-/*#carousel figure:nth-child(1) { background: hsla(   0, 100%, 50%, 0.8 ); }
-#carousel figure:nth-child(2) { background: hsla(  40, 100%, 50%, 0.8 ); }
-#carousel figure:nth-child(3) { background: hsla(  80, 100%, 50%, 0.8 ); }
-#carousel figure:nth-child(4) { background: hsla( 120, 100%, 50%, 0.8 ); }
-#carousel figure:nth-child(5) { background: hsla( 160, 100%, 50%, 0.8 ); }
-#carousel figure:nth-child(6) { background: hsla( 200, 100%, 50%, 0.8 ); }
-#carousel figure:nth-child(7) { background: hsla( 240, 100%, 50%, 0.8 ); }
-#carousel figure:nth-child(8) { background: hsla( 280, 100%, 50%, 0.8 ); }
-#carousel figure:nth-child(9) { background: hsla( 320, 100%, 50%, 0.8 ); }*/
-
-#carousel figure:nth-child(1) {
-    -webkit-transform: rotateY(   0deg ) translateZ( 288px );
-    -moz-transform: rotateY(   0deg ) translateZ( 288px );
-    transform: rotateY(   0deg ) translateZ( 288px );
-}
-#carousel figure:nth-child(2) {
-    -webkit-transform: rotateY(  40deg ) translateZ( 288px );
-    -moz-transform: rotateY(  40deg ) translateZ( 288px );
-    transform: rotateY(  40deg ) translateZ( 288px );
-}
-#carousel figure:nth-child(3) {
-    -webkit-transform: rotateY(  80deg ) translateZ( 288px );
-    -moz-transform: rotateY(  80deg ) translateZ( 288px );
-    transform: rotateY(  80deg ) translateZ( 288px );
-}
-#carousel figure:nth-child(4) {
-    -webkit-transform: rotateY( 120deg ) translateZ( 288px );
-    -moz-transform: rotateY( 120deg ) translateZ( 288px );
-    transform: rotateY( 120deg ) translateZ( 288px );
-}
-#carousel figure:nth-child(5) {
-    -webkit-transform: rotateY( 160deg ) translateZ( 288px );
-    -moz-transform: rotateY( 160deg ) translateZ( 288px );
-    transform: rotateY( 160deg ) translateZ( 288px );
-}
-#carousel figure:nth-child(6) {
-    -webkit-transform: rotateY( 200deg ) translateZ( 288px );
-    -moz-transform: rotateY( 200deg ) translateZ( 288px );
-    transform: rotateY( 200deg ) translateZ( 288px );
-}
-#carousel figure:nth-child(7) {
-    -webkit-transform: rotateY( 240deg ) translateZ( 288px );
-    -moz-transform: rotateY( 240deg ) translateZ( 288px );
-    transform: rotateY( 240deg ) translateZ( 288px );
-}
-#carousel figure:nth-child(8) {
-    -webkit-transform: rotateY( 280deg ) translateZ( 288px );
-    -moz-transform: rotateY( 280deg ) translateZ( 288px );
-    transform: rotateY( 280deg ) translateZ( 288px );
-}
-#carousel figure:nth-child(9) {
-    -webkit-transform: rotateY( 320deg ) translateZ( 288px );
-    -moz-transform: rotateY( 320deg ) translateZ( 288px );
-    transform: rotateY( 320deg ) translateZ( 288px );
-}
-
-.portadaFigure{
-    width: 135px;
-    height: 205px;
-}
-@keyframes rotateInY {
-    0%   { transform: translateZ(-288px) rotateY(0deg);   }
-    100% { transform: translateZ(-288px) rotateY(360deg);    }
-}
-
-@-webkit-keyframes rotateInY {
-    0%   { -webkit-transform: -webkit-translateZ(-288px) rotateY(0deg);   }
-    100% { -webkit-transform: -webkit-translateZ(-288px) rotateY(360deg);    }
-}
-
-@-moz-keyframes rotateInY {
-    0%   { -moz-transform: -moz-translateZ(-288px) rotateY(0deg);   }
-    100% { -moz-transform: -moz-translateZ(-288px) rotateY(360deg);    }
-}
-/*--------------------------------*/
 
 .alerta_aviso{
     clear: both;
@@ -366,8 +33,147 @@ section{
     font-size: 20px;
     font-weight: bold;
 }
-#clear{
+
+.clear{
     clear: both;
+}
+
+#header{
+    height: 165px;
+    background-color: #C70039;
+    border: 3px solid #900C3F;
+}
+
+#logo{
+    margin: auto;
+    width: 100px;
+    padding: 5px;
+    text-align: center;
+}
+
+#logo img{
+    width: 60px;
+}
+
+#logo a{
+    text-align: center;
+    font-family: "Cardinal";
+    font-size: 30px;
+    text-shadow: 0px 1px 1px #FFF;
+    box-sizing: border-box;
+    color: black;
+}
+
+#botones{
+    margin: 0 auto;
+    width: 14em;
+    text-align: center;
+}
+
+#botones a div{
+    color: #581845;
+    float: left;
+    padding: 5px;
+    padding-top: 1px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: arial;
+    margin-top: 5px;
+
+}
+
+#botones a div:hover{
+    color: #FF5733;
+    font-weight: bold;
+}
+
+/*MENÚ*/
+#divMenu{
+    background: #581845;
+    height: 48px;
+}
+#divMenu #labelMenu{
+    clear: both;
+    float: left;
+    display: inline-block;
+    height: 30px;
+    padding-top: 8px;
+    padding-left: 8px;
+    padding-bottom: 8px;
+    border: 1px solid #581845;
+    background: #581845;
+}
+
+#labelMenu:hover{
+    cursor: pointer;
+    background: red;
+}
+
+#menuM{
+    clear: both;
+    width: 70%; 
+    height: 220px;
+    margin: -90%;
+    background: #581845;
+}
+#menuM ul {
+    flex-direction: column; 
+}
+#menuM li{
+    height: 55px;
+    line-height: 55px;
+    transition: all 300ms;
+    border-top: 1px solid #900c3f; 
+}
+
+#menuM li a{
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    line-height: 15px;
+    font-size: 20px;
+}
+
+#menuM ul li:hover{
+    background: #FF5733;
+}
+
+#btn-menu:checked ~ #menuM{
+    margin:0;
+}
+
+#btn-menu{
+    display:none;
+    float: left;
+}
+
+#menuHorizontal{
+    display: none;
+}
+/*-------------PÁGINA PRINCIPAL-------------*/
+
+/*CONTENIDO CENTRAL*/
+#contenido{
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #ccc;
+    min-height: 450px;
+}
+
+.divH2{
+    clear: both;
+    text-align: left;
+    font-size: 1em;
+    font-family: arial;
+    font-weight: bold;
+    color: #581845;
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
 }
 
 .librosInicio{
@@ -375,32 +181,175 @@ section{
     margin: 0 0 2% 2%;
     position: relative;
     width: 18%;
+    margin-top:2px;
+    overflow: hidden;
 }
 
-.botonPortada{
-    margin-top: 5px;
-    margin-left: 25px;
-    margin-bottom: 4px;
-    width: 90px;
-    height: 19px;
+.seccionlibros{
+    float: left;
+    margin: 0 0 2% 2%;
+    position: relative;
+    width: 30%;
+    height: 9em;
+    margin-top:2px;
 }
 
-.precioPortada{
-    font-size: 16px;
-    margin-left: 20px;
-    font-weight: bold;
-    color: #C70039;
+.contenedorLibros{
+    height: 320px;
+    margin-bottom: 10px;
 }
-
 
 .portada{
-    width: 110px;
-    height: 170px;
-    margin-left: 20px;
+    width: 100%;
+    height: 88%;
 }
 
 .portada:hover{
     opacity: .4;
+}
+
+.precioPortada{
+    width: 90%;
+    font-size: 79%;
+    font-family: arial;
+    font-weight: bold;
+    color: #C70039;
+    text-align: center;
+    background: #EAB300;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.paginacion{
+
+    float: left;
+    width: 20px !important;
+    height: 20px !important;
+    padding: 10px;
+
+}
+
+.next_prev_paginacion{
+    padding: 11px !important;
+    line-height: 3px !important;
+    font-size: 20px;
+    width: 30px !important;
+}
+.paginacion:hover{
+    background: #581845 !important;
+    color: #EAB300 !important;
+}
+
+.divPaginacion{
+    position: absolute;
+    width: 80%;
+    bottom:0px;
+}
+.active{
+    background: #581845 !important;
+    color: #EAB300 !important;
+}
+
+/*VISTA LIBRO INDIVIDUAL*/
+h1{
+    text-align: center;
+    margin-top: 5px;
+    font-size: 25px;
+    color: #C70039;
+}
+
+.libIndividual{
+    width: 140px;
+    height: auto;
+    float: left;
+    padding: 2px;
+}
+
+.portadaIndividual{
+    margin: 5px;
+    width: 90%;
+}
+
+#datosLibro{
+    margin: 5px;
+    padding: 5px;
+    width: auto;
+    height: 200px;
+    float: left;
+}
+
+#datosLibro p{
+    margin-top: 2px;
+    margin-bottom: 8px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 18px;
+}
+.titulosDatos{
+    font-size: 18px;
+    font-weight: bold;
+    color: #C70039;
+}
+
+.botonLibIndividual{
+    width: 165px;
+}
+.botonLibInd{
+    width: 72px;
+    height: 20px;
+    margin: 2px;
+    float: left;
+    line-height: 20px;
+}
+
+a .botonLibInd{
+    font-size: 14px;
+    text-align: center;
+    padding: 2px;
+    color: #C70039;
+    font-weight: bold;
+    background: #EAB300;
+    border-radius: 5px;
+}
+
+a .botonLibInd:hover{
+    background: #FFC300;
+}    
+
+#pResenia{
+    padding: 10px;
+}
+
+/*PAGE LOADER*/
+#contenedor_carga{
+    background-color: rgba(250, 240, 245, 0.9);
+    height: 100%;
+    width: 75%;
+    position: fixed;
+    transition: all 1s ease;
+    z-index: 10000;
+}
+
+#carga{
+    border: 15px solid #ccc;
+    border-top-color: #C70039;
+    border-top-style: groove;
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    animation: girar 1.5s linear infinite;
+}
+
+@keyframes girar{
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
 }
 
 /*FORMULARIOS*/
@@ -424,6 +373,7 @@ label{
     color: #581845;
     font-size: 18px;
     margin: 0px auto;
+    font-weight: bold;
 }
 
 input[type="text"],
@@ -432,7 +382,7 @@ input[type="email"],
 input[type="number"],
 input[type="date"],
 input[type="file"],
-select, textarea{
+select, textarea, #cargaLibro{
     margin: 0px auto;
     margin-bottom: 20px;
     border: 1px solid #C9C9C9;
@@ -468,336 +418,35 @@ input[type="submit"]{
     cursor:pointer;
 }
 
-#submitLogin{
-    width: 60%;
+.formFiltro{
+    margin-top: 10px;
 }
-
+/*PANTALLA LOGIN*/
 #login{
-    width: 40%;
-    margin: 0px auto;
-    margin-top: 20px;
-}
-
-
-/*-------------------*/
-
-label{
-    font-size: 25px;
-}
-
-/*VISTA ADMIN*/
-#vistaAdmin{
-    height: 80px;
-    width: 580px;;
-    margin: 0px auto;
-}
-
-.btnAccionAdmin{
-    width: 150px;
-}
-#opciones li{
-    margin-top: 15px;
-}
-
-#opciones li a{
-    text-decoration: none;
-    padding: 5px;
-    margin: 0px auto;
-    margin: 15px;
-    height: 30px;
-    line-height: 30px;
-    display: block;
-    text-align: center;
-    cursor: pointer;
-    color: white;
-    font-weight: bold;
-}
-
-#tablaGestionLibro{
-    margin: 4px;
-    text-align: center;
-    width: 99%;
-    border-bottom: 1px solid #ccc;
-}
-
-#tablaGestionLibro td{
-    padding: 2px;
-    vertical-align: middle;
-    border-right: 1px solid #6B7A8F;
-    border-top: 1px solid #6B7A8F;
-}
-
-#tablaGestionLibro td:last-child{
-    border-right: none;
-}
-
-#tablaGestionLibro th{
-    color: #FF5733;
-    font-weight: bold;
-    padding: 2px;
-    border-right: 1px solid #6B7A8F;
-}
-
-#tablaGestionLibro th:last-child{
-    border-right: none;
-}
-
-#tablaGestionLibro tr:last-child{
-    border-bottom: none;
-}
-
-.botonesGestion{
+    width: 65%;
     margin: auto;
-}
-
-.botonAdmin{
-    margin-bottom: 20px;
-    margin-left: 20px;
-}
-
-.btnVolver{
-    float: right;
-    margin-right: 5px;
-}
-
-#buscarLibroCargar{
-    margin: 0px auto;
-    width: 60%;
-}
-
-#search{
-    width: 30%;
-    height: 25px;
-}
-
-#cargaLibro{
-    width: 88%;
-    height: 25px;
-}
-
-#miSelect{
-    width: 100%;
-}
-
-#button{
-    margin-top:10px;
-    margin-left: 5x;
-}
-
-h4{
-    margin-top: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #6B7A8F;
-}
-/*VISTA LIBROS GENERAL*/
-#seccionFiltros{
-    width: 97%;
-    height: 50px;
-    margin-left: 30px;
-}
-
-#btnBuscar{
-    float: left;
-    width: 40px;
-    padding: 5px;
-    margin: 9px;
-    background-color: #ccc;
-    border-color: #ccc;
-    background-image: url("../img/search.png");
-    background-size: 20px;
-    background-repeat: no-repeat;
-}
-
-.busqueda{
-    float: left;
-    margin-top: 5px;
-}
-
-/*VISTA LIBRO INDIVIDUAL*/
-.libIndividual{
-    margin: 5px;
-    width: 200px;
-    height: auto;
-    float: left;
-}
-
-.portadaIndividual{
-    margin: 5px;
-    width: 100%;
-    height: auto;
-}
-
-#datosLibro{
-    margin: 5px;
-    margin-left: 10px;
-    padding: 5px;
-    width: auto;
-    height: 300px;
-    float: left;
-}
-
-#datosLibro p{
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    border-radius: 7px;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 21px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
-.titulosDatos{
-    font-size: 22px;
-    font-weight: bold;
-    color: #C70039;
-}
-
-#description{
-    margin: 5px;
-    margin-left: 10px;
-    width: 90%;
-    height: auto;
-}
-
-#pResenia{
-    font-size: 20px;
-}
-
-div.botonLibIndividual{
-    width: 210px;
-    height: 40px;
-    margin-top: -10px;
-}
-/*CARRITO*/
-
-.imgCarrito{
-    height: 70px;
-    display: block;
-    margin: 10px auto;
-
-}
-
-#resumenCarrito{
-    width: 295px;
-    float: right;
-}
-
-#deleteCarrito{
-    width: 295px;
-    float: left;
-}
-
-#resumenCarrito h3{
-    font-size: 18px;
-    margin-top:10px;
-    float: left;
-    font-weight: bold;
-}
-
-.btnPedido{
-    width: 120px;
-    display: block;
-    float: right;
-    font-size: 17px;
-    margin-top: 5px;
-}
-
-.btnDelete{
-    width: 120px;
-    display: block;
-    float: left;
-    font-size: 18px;
-    margin-top: 5px;
-    margin-left: 10px;
-}
-
-.btnQuitar{
-    width: 40px;
-    height: 40px;
+/*PANTALLA REGISTRO*/
+#registro{
+    width: 70%;
     margin: auto;
-    background-color: #EAB300;
+    margin-top: 20px;
     border-radius: 7px;
-    background-image: url("../img/delete.png");
-    background-repeat: no-repeat;
-    background-position: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
-.btnQuitar:hover{
-    background-color: #FFC300;
-}
-.td_a{
-    color: white !important;
-    text-decoration: none !important;
-}
-
-.btnVolverCarrito{
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    display: block;
-    margin: 5px;
-    margin-left: 10px;
-    text-align: center;
-    background: #EAB300;
-    border: 1px solid #EAB300; 
-    color: white;
-    font-size:30px;
-}
-
-.updown_unidades {
-    width: 76px;
-    margin: 0px auto;
-}
-
-.updown_unidades .botonUnidades{
-    display: block;
-    width: 20px;
-    float: left;
-    background-color: #6B7A8F;
-    padding: 2px;
-    margin: 7px;
-}
-.parrafo{
-    text-align: center;
-    font-size: 17px;
-    color: #6B7A8F;
-}
-
-.pPedido{
-    font-size: 18px;
-    font-weight: bold;
-    color: black;
-    margin: 5px;
-    margin-left: 10px;
-}
-
-.a_pedido{
-    color: black;
-}
-
-.a_pedido:hover{
-    text-decoration: underline;
-}
-
-#detalleH3{
-    text-align: left;
-    margin-left: 10px;
-}
-
-#selectDetalle{
-    margin: 10px;
-    width: 98%;
-}
-
-#detalleSubmit{
-    margin: 10px;
-}
-
-#accionesOferta{
-    width: 220px;
-    margin: 0px auto;
-}
-
-/*SOCIAL BAR*/
+/*PANTALLA CONTACTO*/
+/*social bar*/
 .social-bar {
     position: fixed;
     right: 0;
@@ -847,6 +496,181 @@ div.botonLibIndividual{
     box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.42);
 }
 
+/*VISTA ADMIN (gestion general)*/
+#vistaAdmin{
+    width:180px;
+    margin: auto;
+}
+
+.btnGestion{
+    width: auto;
+    height: 30px;
+    margin: 15px;
+    line-height: 30px;
+    vertical-align: middle;
+    font-size: 16px;
+    text-align: center;
+    padding: 2px;
+    color: #C70039;
+    font-weight: bold;
+    background: #EAB300;
+    border-radius: 5px;
+}
+
+.btnGestion:hover{
+    background: #FFC300;
+}
+
+/*VISTA ADMIN (gestionar libros,ofertas,pedidos)*/
+
+.tablaGestion{
+    text-align: center;
+    width: 97%;
+    margin: 0 auto;
+    border-bottom: 1px solid #ADADAC;
+}
+
+td,th{
+    border: 1px solid #ADADAC;
+    padding: 2px;
+    vertical-align: middle;
+}
+
+th{
+    color: #C70039;
+}
+
+.tablaGestion td .link_tabla{
+    color:black;
+    text-decoration: underline;
+    font-weight: normal;
+}
+.tablaGestion td a{
+    color:  #E83028;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+.tablaGestion td a:hover{
+    color: #581845;
+}
+.botonUnidMobile{
+    display: none;
+}
+
+.botonAdmin{
+    width: 90px;
+    height: 22px;
+    line-height: 22px;
+    border-radius: 5px;
+    text-align: center;
+    padding: 1px;
+    margin: 5px;
+    color: #C70039;
+    font-weight: bold;
+    background-color: #EAB300;
+    border: 1px solid #EAB300;
+}
+
+.botonAdmin:hover{
+    background: #FFC300;
+    border: 1px solid #FFC300;
+}
+
+.botonBack{
+    width: 25px;
+    font-size: 34px;
+}
+
+#libroBuscar{
+    width: 200px;
+    margin: 0px auto;
+}
+
+.botonSmall{
+    width: 20px;
+    height: 20px;
+    padding: 3px;
+    background-image: url(../img/search.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 14px;
+}
+
+h3{
+    text-align: center;
+    color: #581845;
+    font-weight: bold;
+}
+
+.imgPedido{
+    width: 90px;
+}
+
+.strongPedido{
+    margin: 5px;
+    color: #900C3F;
+    font-weight: bold;
+}
+
+.updown-unidades{
+    width: 80px;
+    margin: 0px auto;
+}
+.updown-unidades .botonUnidades{
+    display: block;
+    width: 20px;
+    float: left;
+    padding:2px;
+    margin: 7px;
+}
+
+.btnQuitar{
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    background-color: #ADADAC;
+    border-radius: 7px;
+    background-image: url("../img/delete.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.btnQuitar:hover{
+    background-color: #C5C5BE;
+}
+
+#deleteCarrito{
+    float: left;
+    width: 60px;
+}
+
+#resumenCarrito{
+    float: right;
+    width: 7em;
+}
+
+#resumenCarrito h3{
+    margin-top: 5px;
+    padding-right: 5px;
+    font-size: 14px;
+}
+
+.botonPedido{
+    font-size: 13px;
+    width: 95px;
+}
+
+td .alerta_aviso{
+    font-size: 13px;
+}
+
+.parrafo{
+    font-size:14px;
+    padding: 10px;
+    color: #3C1414;
+}
+
 /*FOOTER*/
 #footer{
     clear: both;
@@ -859,219 +683,376 @@ div.botonLibIndividual{
     border-top: 3px solid #900C3F;
 }
 
-/*RESPONSIVE DESIGN*/
-
-@media screen and (min-width:400px) and (max-width:768px){
-    #divMenu #labelMenu{
-        display:inline-block;
-        width: 95%;
-        border: 1px solid #581845;
+@media only screen and (min-width:360px) and (max-width:480px){
+    .seccionlibros{
+        height: 10em;
     }
 
-    #menu{
-        width: 70%; 
-        height: 220px;
-        margin: -90%;
-        background: #581845;
+    .contenedorLibros{
+        height: 350px;
     }
-    #menu ul {
-        flex-direction: column; 
-    }
-    #menu li{
-        border-top: 1px solid #900c3f; 
-    }
+}
 
-    #btn-menu:checked ~ #menu{
-        margin:0;
-    }
+@media only screen and (min-width:481px) and (max-width:600px){
 
-    #botones{
-        width: 100px;
-        float:right;
-        
-    }
-
-    #logo img{
-        display:none;
+    .seccionlibros{
+        width: 22%;
     }
 
     #logo{
-        width: 220px;
-        height: 80px;
-        margin-left: -35px;
+        width: 330px;
+        height: 100px;
+        padding-top: 30px;
     }
 
-    #logo a{
-        text-align: center;
-        margin-top: 10px;
-        font-size: 42px;
-    }
-    
-    .portada{
-        width: 55px;
-        height: 90px;
-        margin: 0px;
+    #logoImg{
+        width: 30%;
+        float: left;
     }
 
-    .botonPortada{
-        margin-top: 5px;
-        margin-left: -5px;
-        margin-bottom: 4px;
-        margin-right: 6px;
-        width: 40px;
-        height: 14px;
-       
+    #logoImg img{
+        width: 100%;
     }
-    .precioPortada{
-        font-size: 12px;
-        margin-left: 0px;
-    }
-    
-    .divH2{
-        font-size: 17px;
-    }
-    #slider{
-        height: 155px;
-    }
-   
-    .portadaFigure{
-        width: 80px;
-        height: 120px;
-    }
-    
-    #carousel figure {
-        width: 120px;
-        height: 170px;
-        left: -5px;
-        top: 15px;
-        margin: 0;
-    }
-    
-    #login{
+
+    #logoA{
         width: 70%;
+        height: 85px;
+        line-height: 105px;
+        float: left;
     }
-    
+
+    #logoA a{
+        font-size: 36px;
+    }
+
     #vistaAdmin{
         width: 200px;
     }
-    
-    #cargaLibro{
-        width: 82%;
+
+    #vistaAdmin .btnGestion{
+        height: 35px;
+        line-height: 35px;
+        font-size: 17px;
+        padding: 3px;
     }
-    
-    a .boton{
-        font-size: 13px;
+
+    .parrafo{
+        font-size:16px;
     }
-    
-    .btnAcciones{
-        width: 60px;
-        height: auto;
-    }
-    
-    #seccionFiltros{
-        margin-left: 10px;
-    }
-    
-    #search{
-        width: 50%;
-    }
-    
-    #resumenCarrito{
-        width: 150px;
-    }
-    
-    #contenido{
-        overflow-x: auto;
-    }
-    
-    h1{
-        font-size: 25px;
-    }
-    
-    .titulosDatos{
-        font-size: 18px;
-    }
-    
-    .libIndividual{
-        width: 130px;
-    }
-    
 }
 
-@media screen and (min-width:769px) and (max-width:1055px){
-    .portada{
-        width: 80px;
-        height: 120px;
-        margin: 0px;
-    }
-    .portadaFigure{
-        width: 80px;
-        height: 120px;
-    }
-    .botonPortada{
-        margin-top: 5px;
-        margin-left: 0px;
-        margin-bottom: 4px;
-        width: 72px;
-        height: 14px;
-    }
-    .precioPortada{
-        font-size: 13px;
-        margin-left: 0px;
-    }
-    .divH2{
-        font-size: 20px;
-    }
-    #slider{
-        height: 190px;
-    }
-    #carousel figure {
-        width: 120px;
-        height: 170px;
-        left: 15px;
-        top: 15px;
-        margin: 0;
+@media only screen and (min-width:601px) and (max-width:768px){
+    #logo{
+        width: 420px;
+        height: 100px;
     }
 
-    #seccionFiltros{
-        margin-left: 13px;
+    #logoImg{
+        width: 30%;
+        float: left;
     }
 
-    #search{
-        height: 22px;
-
+    #logoImg img{
+        width: 95%;
     }
 
-    #vistaAdmin{
-        width: 200px;
+    #logoA{
+        width: 70%;
+        height: 85px;
+        line-height: 135px;
+        float: left;
     }
 
-    #menu{
-        height: 45px;
-    }
-
-    #menu ul li{
-        height: 45px;
-        line-height: 45px;
-        border-right: 1px solid #900C3F;
-    }
-
-    #resumenCarrito{
-        width: 280px;
+    #logoA a{
+        font-size: 44px;
     }
 
     #botones{
-        width: 110px;
+        width: 15em;
     }
 
-    #logo img{
-        width: 90px;
+    #botones a div{
+        font-size: 16px;
     }
 
-    #logo a{
-        font-size: 47px;
-        margin-top: 30px;
+    #vistaAdmin{
+        width: 250px;
+    }
+
+    #vistaAdmin .btnGestion{
+        height: 38px;
+        line-height: 35px;
+        font-size: 19px;
+        padding: 3px;
+    }
+
+    .seccionlibros{
+        width: 18%;
+    }
+
+    .portada{
+        width: 95%;
+        height: 86%;
+    }
+
+    .parrafo{
+        font-size:18px;
+    }
+}
+@media only screen and (max-width:768px){
+    .tablaGestion{
+        width: 79%;
+        margin: auto;
+        margin-bottom: 40px;
+    }
+
+    tr,td{
+        padding: 5px;
+        text-align: center;
+    }
+
+    .tablaGestion tr{
+        display: flex;
+        flex-direction: column;
+        border: 1px solid grey;
+        padding: 1em;
+
+    }
+
+    .tablaGestion thead{
+        display: none;
+    }
+
+    .tablaGestion td{
+        border: none;
+    }
+
+    .tablaGestion td[data-titulo]{
+        display: flex;
+    }
+
+    .tablaGestion td[data-titulo]::before{
+        content: attr(data-titulo);
+        width: 80px;
+        color:#581845;
+        font-weight: bold;
+        text-align: initial;
+    }
+
+    .updown-unidades{
+        display: none;
+    }
+    .botonUnidMobile{
+        display: block;
+    }
+
+    .botonUnidMobile .botonUnidades{
+        display: block;
+        width: 15px;
+        height: 15px;
+        float: left;
+        padding:2px;
+        margin-top: -2px;
+        margin-left: 5px;
+        line-height: 15px;
     }
 }
 
+@media only screen and (min-width:769px) and (max-width:1200px){
+
+    #menuMobile{
+        display: none;
+    }
+
+    #menuHorizontal{
+        display: block;
+        background: #581845;
+        height: 48px;
+    }
+
+    #menu ul li{
+        line-height: 48px;
+        float:left;
+        border-right: 1px solid #900C3F;
+    }
+    #menu a{
+        display: block;
+        color: white;
+        font-size: 18px;
+        padding-left: 16px;
+        padding-right: 16px;
+        transition: all 300ms;
+    }
+    #menu ul li:hover{
+        background: #FF5733;
+        transition: all 300ms;
+    }
+
+    #logo{
+        width: 405px;
+        height: 100px;
+        float: left;
+    }
+
+    #logoImg{
+        width: 30%;
+        float: left;
+    }
+
+    #logoImg img{
+        width: 95%;
+    }
+
+    #logoA{
+        width: 70%;
+        height: 85px;
+        line-height: 135px;
+        float: left;
+    }
+
+    #logoA a{
+        font-size: 44px;
+    }
+
+    #botones{
+        float: right;
+        margin-top: -100px;
+        width: 16em;
+    }
+    #botones a div{
+        padding-left: 10px;
+        font-size: 16px;
+    }
+
+    .portada{
+        width: 90%;
+    }
+
+    .seccionlibros{
+        width: 18%;
+        height: 12em;
+    }
+
+    #resumenCarrito{
+        width: 9em;
+        margin-right: 8px;
+    }
+
+    #resumenCarrito h3{
+        margin-top: 10px;
+        font-size: 15px;
+    }
+
+    #vistaAdmin{
+        width: 300px;
+    }
+
+    #vistaAdmin .btnGestion{
+        height: 40px;
+        line-height: 35px;
+        font-size: 19px;
+        padding: 3px;
+    }
+}
+
+@media (min-width:1200px){
+
+    #menuMobile{
+        display: none;
+    }
+
+    #menuHorizontal{
+        display: block;
+        background: #581845;
+        height: 48px;
+    }
+
+    #menu ul li{
+        line-height: 48px;
+        float:left;
+        border-right: 1px solid #900C3F;
+    }
+    #menu a{
+        display: block;
+        color: white;
+        font-size: 18px;
+        padding-left: 16px;
+        padding-right: 16px;
+        transition: all 300ms;
+    }
+    #menu ul li:hover{
+        background: #FF5733;
+        transition: all 300ms;
+    }
+
+    #logo{
+        width: 500px;
+        height: 150px;
+        float: left;
+    }
+
+    #logoImg{
+        width: 30%;
+        float: left;
+    }
+
+    #logoImg img{
+        width: 88%;
+    }
+
+    #logoA{
+        width: 70%;
+        height: 85px;
+        line-height: 135px;
+        float: left;
+    }
+
+    #logoA a{
+        font-size: 53px;
+    }
+
+    #botones{
+        float: right;
+        margin-top: -150px;
+        width: 16em;
+    }
+    #botones a div{
+        padding-left: 10px;
+        font-size: 16px;
+    }
+
+    .portada{
+        width: 150px;
+    }
+
+    .precioPortada{
+        width: 80%;
+    }
+    
+    .seccionlibros{
+        width: 18%;
+        height: 225px;
+    }
+
+    #resumenCarrito{
+        width: 9em;
+        margin-right: 8px;
+    }
+
+    #resumenCarrito h3{
+        margin-top: 10px;
+        font-size: 15px;
+    }
+
+    #vistaAdmin{
+        width: 300px;
+    }
+
+    #vistaAdmin .btnGestion{
+        height: 40px;
+        line-height: 35px;
+        font-size: 19px;
+        padding: 3px;
+    }
+}
 

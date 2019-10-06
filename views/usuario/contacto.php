@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="<?=base_url?>/assets/css/font.css">
 <div class="social-bar">
     <a href="https://www.facebook.com/libreriaDracarys" class="icon icon-facebook" target="_blank"></a>
     <a href="https://twitter.com/LibreriaDracar1" class="icon icon-twitter" target="_blank"></a>

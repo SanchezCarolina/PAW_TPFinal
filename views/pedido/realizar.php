@@ -1,6 +1,6 @@
 <script type="text/javascript" src="<?=base_url?>assets/js/formularioEnvio.js"></script>
 <?php if(isset($_SESSION['identity'])):?>
-<a href="<?=base_url?>carrito/index"><div class="btnVolverCarrito"><</div></a>
+<a href="<?=base_url?>carrito/index"><div class="botonBack botonAdmin"><</div></a>
 
 <h3>Complete los datos de envío</h3>
 <form name="formEnvio" action="<?=base_url?>pedido/add" method="post">
@@ -48,7 +48,7 @@
     <input type="submit" value="Confirmar">
 </form>
 <?php else:?>
-<h2 class="alert_red">Debes iniciar sesión para realizar un pedido</h2>
+<h2 class="alerta_aviso">Debes iniciar sesión para realizar un pedido</h2>
 <?php endif; ?>
 
 

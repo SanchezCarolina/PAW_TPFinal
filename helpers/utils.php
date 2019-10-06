@@ -79,4 +79,15 @@ class Utils{
         return $precio;
     }
  
+    public static function existeEnOferta($isbn){
+        require_once 'models/libro.php';
+        
+        $libro = new Libro();
+        $existe = $libro->existeEnOferta($isbn);
+        if($existe->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

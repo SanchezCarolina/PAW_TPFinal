@@ -1,20 +1,21 @@
-<a href="<?=base_url?>libro/gestion"><div class="btnVolverCarrito"><</div></a>
-<?php if(isset($edit) && isset($lib) && is_object($lib)):?>
-    <h2>Editar libro "<?=$lib->titulo?>"</h2>
-    <?php $url_action = base_url."libro/save&isbn=".$lib->isbn;?>
+<a href="<?= base_url ?>libro/gestion"><div class="botonBack botonAdmin"><</div></a>
+<?php if (isset($edit) && isset($lib) && is_object($lib)): ?>
+    <h2>Editar libro "<?= $lib->titulo ?>"</h2>
+    <?php $url_action = base_url . "libro/save&isbn=" . $lib->isbn; ?>
 <?php else: ?>
     <h2>Cargar nuevo libro</h2>
-    <?php $url_action = base_url."libro/save";?>
-    <div id="buscarLibroCargar">
+    <?php $url_action = base_url . "libro/save"; ?>
+
+    <div id="libroBuscar">
         <input id="cargaLibro" placeholder="Titulo o autor del libro">
-        <button id="button" class="botonSmall"></button>
-        <h4>Resultados para su búsqueda</h4>
-        <div id="divSelect">
-            <select id="miSelect" onChange="elegir()"></select>
-        </div>
+        <button id="button" class="botonSmall" ></button>
     </div>
-<?php endif;?>  
-    
+    <h3>Resultados para su búsqueda</h3>
+    <div id="divSelect">
+        <select id="miSelect" onChange="elegir()"></select>
+    </div>
+<?php endif; ?>  
+
 <div id="divLibro">
     <form action="<?= $url_action ?>" method="post">
         <label for="isbn">ISBN:</label>
@@ -48,5 +49,5 @@
     </form>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-<script src="<?=base_url?>/assets/js/book.js"></script>
- 
+<script src="<?= base_url ?>/assets/js/book.js"></script>
+

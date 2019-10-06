@@ -6,7 +6,7 @@
             <h2 class="alerta_aviso">Lo sentimos, no hay stock para agregar al carrito</h2>
         <?php endif;?>
         <h1><?=$ofer->titulo?></h1>
-        <div class="libIndividual"><img class="portadaIndividual" src="<?= $ofer->portada?>"></div>
+        <div class="libIndividual"><img alt="Portada de libro" class="portadaIndividual" src="<?= $ofer->portada?>"></div>
         <div id="datosLibro">
             <p><strong class="titulosDatos">ISBN:</strong> <?=$ofer->isbn?></p>
             <p><strong class="titulosDatos">Género:</strong> <?=$ofer->genero?></p>
@@ -14,13 +14,13 @@
             <p><strong class="titulosDatos">Precio:</strong> $<?=$ofer->new_precio?></p>
             <p><strong class="titulosDatos">Stock disponible:</strong> <?=$ofer->stock?></p>
             <div class="botonLibIndividual">
-                <a href="<?=base_url?>libro/vista&isbn=<?=$ofer->isbn?>"><div class="boton btnAcciones">Vista previa</div></a>
-                <a href="<?=base_url?>carrito/add&isbn=<?=$ofer->isbn?>"><div class="boton btnAcciones">Comprar</div></a>
+                <a href="<?=base_url?>libro/vista&isbn=<?=$ofer->isbn?>"><div class="botonLibInd">Vista previa</div></a>
+                <a href="<?=base_url?>carrito/add&isbn=<?=$ofer->isbn?>"><div class="botonLibInd">Comprar</div></a>
             </div>
         </div>
-        <div id="clear"></div>
+        <div class="clear"></div>
         <div id="description">
-            <p id="pResenia"><strong class="titulosDatos">Reseña:</strong><br> <?=$ofer->resenia?></p>
+            <p id="pResenia"><strong class="titulosDatos">Reseña:</strong><br><br> <?=$ofer->resenia?></p>
         </div>
     <?php else: ?>
         <h1>El libro no existe</h1>

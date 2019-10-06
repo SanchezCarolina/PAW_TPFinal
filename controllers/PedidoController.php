@@ -76,6 +76,25 @@ class pedidoController{
         $pedido->setId_usuario($id_usuario);
         $pedidos = $pedido->getAllByUser();
         
+        if (isset($_GET['pagina'])) {
+            if ($_GET['pagina'] == 1) {
+                header("Location:" . base_url . 'pedido/mis_pedidos');
+            } else {
+                $pagina = $_GET['pagina'];
+            }
+        }
+        else{
+            $pagina = 1;
+        }
+       
+        $librosXPagina = $this->librosXPagina();
+        $empezar_desde = ($pagina - 1) * $librosXPagina;
+        $numFilas = $pedidos->rowCount();
+
+        $totalPaginas = ceil($numFilas / $librosXPagina);
+
+        $pedidos = $pedido->getAllByUserPaginacion($empezar_desde, $librosXPagina);
+        
         require_once 'views/pedido/mis_pedidos.php';
     }
     
@@ -100,12 +119,36 @@ class pedidoController{
         }
     }
     
+    public function librosXPagina() {
+        $cantLibros = 5;
+        return $cantLibros;
+    }
+    
     public function gestion(){
         Utils::isAdmin();
         $gestion = true;
         $pedido = new Pedido();
         $pedidos = $pedido->getAll();
         
+        if (isset($_GET['pagina'])) {
+            if ($_GET['pagina'] == 1) {
+                header("Location:" . base_url . 'pedido/gestion');
+            } else {
+                $pagina = $_GET['pagina'];
+            }
+        }
+        else{
+            $pagina = 1;
+        }
+       
+        $librosXPagina = $this->librosXPagina();
+        $empezar_desde = ($pagina - 1) * $librosXPagina;
+        $numFilas = $pedidos->rowCount();
+
+        $totalPaginas = ceil($numFilas / $librosXPagina);
+
+        $pedidos = $pedido->getAllPaginacion($empezar_desde, $librosXPagina);
+       
         require_once 'views/pedido/mis_pedidos.php'; 
     }
     

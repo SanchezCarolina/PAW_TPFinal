@@ -1,4 +1,4 @@
-<a href="<?=base_url?>libro/gestion"><div class="btnVolverCarrito"><</div></a>
+<a href="<?=base_url?>libro/gestion"><div class="botonBack botonAdmin"><</div></a>
 <?php if(isset($edit) && isset($ofer) && is_object($ofer)):?>
 <h2>Editar oferta</h2>
 <?php $url_action = base_url."oferta/save&isbn=".$ofer->isbn;?>

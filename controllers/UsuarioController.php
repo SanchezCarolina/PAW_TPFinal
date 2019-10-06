@@ -27,13 +27,14 @@ class usuarioController{
             $apellido = isset($_POST['apellido']) ? $_POST['apellido'] : false;
             $email = isset($_POST['email']) ? $_POST['email'] : false;
             $password = isset($_POST['password']) ? $_POST['password'] : false;
+            $pass_cifrado = password_hash($password, PASSWORD_DEFAULT);
               
             if($nombre && $apellido && $email && $password){
                 $usuario = new Usuario();
                 $usuario->setNombre($_POST['nombre']);
                 $usuario->setApellido($_POST['apellido']);
                 $usuario->setEmail($_POST['email']);
-                $usuario->setPassword($_POST['password']);
+                $usuario->setPassword($pass_cifrado);
 
                 $save = $usuario->save();
                 if($save){

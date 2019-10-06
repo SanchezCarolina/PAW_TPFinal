@@ -1,25 +1,46 @@
-<div id="seccionFiltros">
-    <form action="<?= base_url ?>libro/filtrar" method="post">
-        <input id="search" class="busqueda" placeholder="Titulo o autor del libro" name="search">
-        <input type="submit" value="" id="btnBuscar">
-    </form>
+<div>
+    <div class="formFiltro">
+        <form action="<?= base_url ?>libro/filtrar" method="post">
+            <input type="text" name="titulo" placeholder="Título...">
+            <select name="genero">
+                <option value="">Género</option>
+                <?php
+                while ($gen = $generos->fetchObject()) {
+                    echo '<option value="' . $gen->genero . '">' . $gen->genero . '</option>';
+                }
+                ?>
+            </select>
+            <select name="precios">
+                <option value="">Precio</option>
+                <option value="0">menor a $100</option>
+                <option value="1">entre $100 y $200</option>
+                <option value="2">entre $200 y $300</option>
+                <option value="3">entre $300 y $400</option>
+                <option value="4">entre $400 y $500</option>
+                <option value="5">mas de $500</option>
+            </select>
+
+            <input type="submit" value="Buscar">
+        </form>
+    </div>
+    <div class="contenedorLibros">
+        <?php if (isset($sinResultados)) : ?>
+            <h2>No hay resultados para su búsqueda</h2>
+        <?php endif; ?>
+        <?php while ($lib = $libros->fetchObject()): ?>
+            <div class="seccionlibros">
+                <a href="<?= base_url ?>libro/verLibroIndividual&isbn=<?= $lib->isbn ?>"><img alt="Portada de libro" class="portada" src="<?= $lib->portada ?>"></a> 
+                <div class="clear"></div>
+            </div>
+        <?php endwhile; ?>
+    </div>
+    <div class="clear"></div>
+    <div class="divPaginacion" <?= isset($filtro) ? 'style="display: none"' : '' ?>>
+        <a href="<?= base_url ?>libro/verLibros&pagina=<?= $pagina - 1 ?>"> <button class="paginacion botonAdmin next_prev_paginacion"<?= $pagina <= 1 ? 'disabled="disabled"' : '' ?>><</button></a>
+        <?php for ($i = 1; $i <= $totalPaginas; $i++): ?>
+            <a href="<?= base_url ?>libro/verLibros&pagina=<?= $i ?>"> <div class="paginacion botonAdmin <?= $pagina == $i ? 'active' : '' ?>"><?= $i ?></div></a>
+        <?php endfor; ?>
+        <a href="<?= base_url ?>libro/verLibros&pagina=<?= $pagina + 1 ?>"> <button class="paginacion botonAdmin next_prev_paginacion"<?= $pagina >= $totalPaginas ? 'disabled="disabled"' : '' ?>>></button></a>
+    </div>
+
 </div>
-<?php if (isset($filtro)): ?>
-    <?php while ($fil = $filtro->fetchObject()): ?>
-        <div class="librosInicio">
-            <a href="<?= base_url ?>libro/verLibroIndividual&isbn=<?= $fil->isbn ?>"><img class="portada" src="<?= $fil->portada ?>"></a>
-            <div id="clear"></div>
-            <strong class="precioPortada">Precio: <strong style="color: black">$<?=$fil->precio?></strong></strong>
-            <a href="<?=base_url?>carrito/add&isbn=<?=$fil->isbn?>"><div class="boton btnAcciones botonPortada">Comprar</div></a>
-        </div>
-    <?php endwhile; ?>
-<?php else : ?>
-    <?php foreach ($libros as $lib): ?>
-        <div class="librosInicio">
-            <a href="<?= base_url ?>libro/verLibroIndividual&isbn=<?= $lib['isbn'] ?>"><img class="portada" src="<?= $lib['portada'] ?>"></a> 
-            <div id="clear"></div>
-            <strong class="precioPortada">Precio: <strong style="color: black">$<?=$lib['precio']?></strong></strong>
-            <a href="<?=base_url?>carrito/add&isbn=<?=$lib['isbn']?>"><div class="boton btnAcciones botonPortada">Comprar</div></a>
-        </div>
-    <?php endforeach; ?>
-<?php endif; ?>

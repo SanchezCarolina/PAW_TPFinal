@@ -9,7 +9,7 @@
     </form>
     
     <?php if(isset($_SESSION['error_login']) && $_SESSION['error_login'] == 'failed'):?>
-    <strong class="alerta_aviso strongAvisos">Login fallido! Vuelva a introducir los datos</strong>
+    <p class="alerta_aviso">Login fallido! Vuelva a introducir los datos</p>
     <?php endif; ?>
     <?php Utils::deleteSession('error_login'); ?>
 </div>

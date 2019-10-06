@@ -1,4 +1,4 @@
-CREATE DATABASE libreria CHARACTER SET 'UTF8' COLLATE 'utf8_spanish2_ci';
+CREATE DATABASE libreria CHARACTER SET 'UTF8' COLLATE 'utf8_spanish_ci';
 USE libreria;
 
 CREATE TABLE usuario(
