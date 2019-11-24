@@ -1,5 +1,5 @@
 <?php if (isset($_SESSION['pedido']) && $_SESSION['pedido'] == 'complete'): ?>
-    <h2 class="alerta_aviso">Tu pedido se ha confirmado!</h2>
+    <h2 class="alerta_verde">Tu pedido se ha confirmado!</h2>
     <p class="parrafo">
         Tu pedido ha sido guardado exitosamente, una vez que se acredite el pago del mismo,
         será procesado y enviado.
@@ -32,5 +32,5 @@
         </table>
     <?php endif; ?>
 <?php elseif (isset($_SESSION['pedido']) && $_SESSION['pedido'] != 'complete'): ?>
-    <h2 class="alerta_aviso">Tu pedido no se ha podido procesar!</h2>
+    <h2 class="alerta_roja">Tu pedido no se ha podido procesar!</h2>
 <?php endif; ?>

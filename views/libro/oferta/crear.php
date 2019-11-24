@@ -1,5 +1,5 @@
-<a href="<?=base_url?>libro/gestion"><div class="botonBack botonAdmin"><</div></a>
 <?php if(isset($edit) && isset($ofer) && is_object($ofer)):?>
+<a href="<?=base_url?>oferta/gestion"><div class="botonBack botonAdmin"><</div></a>
 <h2>Editar oferta</h2>
 <?php $url_action = base_url."oferta/save&isbn=".$ofer->isbn;?>
 <form action="<?=$url_action?>" method="post">
@@ -12,6 +12,7 @@
     <input type="submit" value="Guardar">
 </form>
 <?php else: ?>
+ <a href="<?=base_url?>libro/gestion"><div class="botonBack botonAdmin"><</div></a>   
 <h2>Nueva oferta</h2>
 
 <form action="<?=base_url?>oferta/save" method="post">

@@ -26,9 +26,17 @@ h2{
     padding: 10px;
 }
 
-.alerta_aviso{
+.alerta_verde{
     clear: both;
-    color: #FF5733;
+    color: #009975;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.alerta_roja{
+    clear: both;
+    color: #cb3234d1;
     text-align: center;
     font-size: 20px;
     font-weight: bold;
@@ -40,8 +48,8 @@ h2{
 
 #header{
     height: 165px;
-    background-color: #C70039;
-    border: 3px solid #900C3F;
+    background-color: #c70039e8;
+    border: 3px solid #900c3f61;
 }
 
 #logo{
@@ -89,9 +97,10 @@ h2{
 
 /*MENÚ*/
 #divMenu{
-    background: #581845;
+    background: #581845d6;
     height: 48px;
 }
+
 #divMenu #labelMenu{
     clear: both;
     float: left;
@@ -100,21 +109,20 @@ h2{
     padding-top: 8px;
     padding-left: 8px;
     padding-bottom: 8px;
-    border: 1px solid #581845;
-    background: #581845;
+    /*border: 1px solid #581845d6;*/
 }
 
 #labelMenu:hover{
     cursor: pointer;
-    background: red;
 }
+
 
 #menuM{
     clear: both;
     width: 70%; 
     height: 220px;
     margin: -90%;
-    background: #581845;
+    background: #581845d6;
 }
 #menuM ul {
     flex-direction: column; 
@@ -136,7 +144,8 @@ h2{
 }
 
 #menuM ul li:hover{
-    background: #FF5733;
+    background: #FF5733CC;
+    transition: all 500ms;
 }
 
 #btn-menu:checked ~ #menuM{
@@ -236,7 +245,7 @@ h2{
     width: 30px !important;
 }
 .paginacion:hover{
-    background: #581845 !important;
+    background: #581845d6 !important;
     color: #EAB300 !important;
 }
 
@@ -246,8 +255,13 @@ h2{
     bottom:0px;
 }
 .active{
-    background: #581845 !important;
+    background: #581845d6 !important;
     color: #EAB300 !important;
+}
+
+/*SLIDER PAGINA PRINCIPAL*/
+.slide-contenedor{
+    display: none;
 }
 
 /*VISTA LIBRO INDIVIDUAL*/
@@ -370,7 +384,7 @@ select, textarea{
 }
 
 label{
-    color: #581845;
+    color: #581845d6;
     font-size: 18px;
     margin: 0px auto;
     font-weight: bold;
@@ -513,7 +527,7 @@ input[type="submit"]{
     padding: 2px;
     color: #C70039;
     font-weight: bold;
-    background: #EAB300;
+    background: #eab300ad;
     border-radius: 5px;
 }
 
@@ -551,9 +565,22 @@ th{
     font-size: 0.8em;
 }
 
-.tablaGestion td a:hover{
-    color: #581845;
+.tablaGestion td .a_editar{
+    color: #009975 !important;
 }
+
+.tablaGestion td .a_enOferta{
+    color: #2274B3 !important;
+}
+
+.tablaGestion td .a_eliminar{
+    color: #cb3234d1 !important;
+}
+
+.tablaGestion td .a_addOferta{
+    color: #2274b3b0 !important;
+}
+
 .botonUnidMobile{
     display: none;
 }
@@ -568,8 +595,8 @@ th{
     margin: 5px;
     color: #C70039;
     font-weight: bold;
-    background-color: #EAB300;
-    border: 1px solid #EAB300;
+    background-color: #eab300ad;
+    border: 1px solid #eab300ad;
 }
 
 .botonAdmin:hover{
@@ -679,9 +706,100 @@ td .alerta_aviso{
     padding-top:10px;
     padding-bottom: 10px;
     color: white;
-    background: #581845;
-    border-top: 3px solid #900C3F;
+    background: #581845d6;
+    border-top: 3px solid #900c3f61;
 }
+
+
+
+/*SLIDER PAGINA PRINCIPAL*/
+    .slide-contenedor{    
+        max-width:100%;
+        max-height: 23vh;
+        width: 100%;
+        height:auto;
+        position: relative;
+        overflow: hidden;
+        /* margin: auto; */
+    }
+/* .miSlider{
+    display: none;
+    transition: 2s;
+    max-height: 100vh;
+} */
+
+.miSlider img{
+    width: 100%;
+    max-height: 23vh;
+    height: inherit;
+    object-fit: cover;
+    vertical-align: top;
+    transition: 2s;
+}
+
+.direcciones{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+}
+
+.direcciones a{
+    color: #fff;
+    display: inline-block;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.direcciones a:hover{
+    background: rgba(0, 0, 0, .5);
+    transition: .5s;
+}
+
+.barras{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom:15px;
+}
+
+.barra{
+    cursor: pointer;
+    height:3px;
+    width: 25px;
+    margin: 0 2px;
+    background: #dcdde1;
+    display: inline-block;
+    margin-left: 3px;
+}
+
+.active{
+    background-color: #e74c3c;
+}
+
+.fade{
+    animation-name: fade;
+    animation-duration: 1.5s;    
+}
+
+@keyframes fade {
+    from {opacity: .4;}
+    to{opacity:1;}
+}
+/*-------------FIN SLIDER-----------------*/
+
+@media only screen and (min-width:320px) and (max-width:479px){
+    .slide-contenedor{
+        display: none;
+    }
+}
+
 
 @media only screen and (min-width:360px) and (max-width:480px){
     .seccionlibros{
@@ -691,6 +809,11 @@ td .alerta_aviso{
     .contenedorLibros{
         height: 350px;
     }
+
+    .slide-contenedor{
+        display: none;
+    }
+
 }
 
 @media only screen and (min-width:481px) and (max-width:600px){
@@ -738,6 +861,11 @@ td .alerta_aviso{
 
     .parrafo{
         font-size:16px;
+    }
+
+    .slide-contenedor{
+        display: block;
+        max-height: 23vh;
     }
 }
 
@@ -798,7 +926,20 @@ td .alerta_aviso{
     .parrafo{
         font-size:18px;
     }
+
+    .slide-contenedor{
+        display: block;
+        max-height: 30vh;
+    }
+
+    .miSlider img{
+        width: 100%;
+        max-height: 30vh;
+        height: 30vh;
+    }    
+
 }
+
 @media only screen and (max-width:768px){
     .tablaGestion{
         width: 79%;
@@ -856,6 +997,7 @@ td .alerta_aviso{
         margin-left: 5px;
         line-height: 15px;
     }
+
 }
 
 @media only screen and (min-width:769px) and (max-width:1200px){
@@ -866,7 +1008,7 @@ td .alerta_aviso{
 
     #menuHorizontal{
         display: block;
-        background: #581845;
+        background: #581845d6;
         height: 48px;
     }
 
@@ -884,8 +1026,8 @@ td .alerta_aviso{
         transition: all 300ms;
     }
     #menu ul li:hover{
-        background: #FF5733;
-        transition: all 300ms;
+        background: #FF5733CC;
+        transition: all 500ms;
     }
 
     #logo{
@@ -953,9 +1095,21 @@ td .alerta_aviso{
         font-size: 19px;
         padding: 3px;
     }
+
+    .slide-contenedor{
+        display: block;
+        max-height: 40vh;
+    }
+
+    .miSlider img{
+        width: 100%;
+        max-height: 40vh;
+        height: 40vh;
+    }
+
 }
 
-@media (min-width:1200px){
+@media (min-width:1201px){
 
     #menuMobile{
         display: none;
@@ -963,7 +1117,7 @@ td .alerta_aviso{
 
     #menuHorizontal{
         display: block;
-        background: #581845;
+        background: #581845d6;
         height: 48px;
     }
 
@@ -1026,7 +1180,7 @@ td .alerta_aviso{
     }
 
     .precioPortada{
-        width: 80%;
+        width: 145px;
     }
     
     .seccionlibros{
@@ -1054,5 +1208,17 @@ td .alerta_aviso{
         font-size: 19px;
         padding: 3px;
     }
+
+    .slide-contenedor{
+        display: block;
+        max-height: 40vh;
+    }
+
+    .miSlider img{
+        width: 100%;
+        max-height: 40vh;
+        height: 40vh;
+    }
+
 }
 

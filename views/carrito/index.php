@@ -21,19 +21,19 @@
                     <td data-titulo="Titulo"><?= $libro->titulo ?></td>
                     <td data-titulo="Precio"><?= $libro->precio ?></td>
                     <td data-titulo="Unidades">
+                        <div class="botonUnidMobile"><a href="<?= base_url ?>/carrito/down&index=<?= $indice ?>" class="botonUnidades botonAdmin">-</a></div>
                         <div class="botonUnidMobile"><a href="<?= base_url ?>/carrito/up&index=<?= $indice ?>" class="botonUnidades botonAdmin">+</a></div>
                         <?php if ($elemento['unidades'] <= $libro->stock): ?>
                             <?= $elemento['unidades'] ?>
                         <?php else: ?>
-                            <p class="alerta_aviso">Sin stock</p>
+                            <p class="alerta_roja">Sin stock</p>
                             <?php
                             $sinStock = true;
                             ?>
                         <?php endif; ?>
-                        <div class="botonUnidMobile"><a href="<?= base_url ?>/carrito/down&index=<?= $indice ?>" class="botonUnidades botonAdmin">-</a></div>    
                         <div class="updown-unidades">
-                            <a href="<?= base_url ?>/carrito/up&index=<?= $indice ?>" class="botonUnidades botonAdmin">+</a>    
                             <a href="<?= base_url ?>/carrito/down&index=<?= $indice ?>" class="botonUnidades botonAdmin">-</a>
+                            <a href="<?= base_url ?>/carrito/up&index=<?= $indice ?>" class="botonUnidades botonAdmin">+</a>    
                         </div>
 
                     </td>
@@ -56,5 +56,5 @@
     </div>
 
 <?php else: ?>
-    <p class="alerta_aviso">El carrito está vacio, añade algun producto</p>
+    <p class="alerta_roja">El carrito está vacio, añade algun producto</p>
 <?php endif; ?>

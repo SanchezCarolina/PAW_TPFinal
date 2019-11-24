@@ -1,12 +1,13 @@
+
 <a href="<?= base_url ?>usuario/admin"><div class="botonBack botonAdmin"><</div></a>
 <h2>Gestión de libros</h2>
 
 <!-- SESIÓN PARA CUANDO SE CARGA UN NUEVO LIBRO-->
 <div>
     <?php if (isset($_SESSION['libro']) && $_SESSION['libro'] == 'complete'): ?>
-        <p class="alerta_aviso">Libro cargado exitosamente!</p>
+        <p class="alerta_verde">Libro cargado exitosamente!</p>
     <?php elseif (isset($_SESSION['libro']) && $_SESSION['libro'] == 'failed'): ?>
-        <p class="alerta_aviso">No se ha podido cargar el libro, ya se encuentra en la base de datos</p>
+        <p class="alerta_roja">No se ha podido cargar el libro</p>
     <?php endif; ?>
     <?php Utils::deleteSession('libro'); ?>
 </div>  
@@ -14,9 +15,9 @@
 <!-- SESIÓN PARA CUANDO SE EDITA UN LIBRO-->
 <div>
     <?php if (isset($_SESSION['edit']) && $_SESSION['edit'] == 'complete'): ?>
-        <p class="alerta_aviso">El libro se ha actualizado exitosamente!</p>
+        <p class="alerta_verde">El libro se ha actualizado exitosamente!</p>
     <?php elseif (isset($_SESSION['edit']) && $_SESSION['edit'] == 'failed'): ?>
-        <p class="alerta_aviso">No se ha podido actualizar el libro</p>
+        <p class="alerta_roja">No se ha podido actualizar el libro</p>
     <?php endif; ?>
     <?php Utils::deleteSession('edit'); ?>
 </div>
@@ -24,9 +25,9 @@
 <!-- SESIÓN PARA CUANDO SE ELIMINA UN LIBRO-->
 <div>
     <?php if (isset($_SESSION['delete']) && $_SESSION['delete'] == 'complete'): ?>
-        <p class="alerta_aviso">El libro se ha eliminado exitosamente!</p>
+        <p class="alerta_verde">El libro se ha eliminado exitosamente!</p>
     <?php elseif (isset($_SESSION['delete']) && $_SESSION['delete'] == 'failed'): ?>
-        <p class="alerta_aviso">No se ha podido eliminar el libro</p>
+        <p class="alerta_roja">No se ha podido eliminar el libro</p>
     <?php endif; ?>
     <?php Utils::deleteSession('delete'); ?>
 </div>
@@ -53,12 +54,12 @@
                 <td data-titulo="Stock disponible"><?= $lib->stock; ?></td>
                 <td data-titulo="Fecha"><?= $lib->fecha_carga; ?></td>
                 <td>
-                    <a href="<?= base_url ?>libro/editar&isbn=<?= $lib->isbn ?>">Editar</a>
-                    <a href="<?= base_url ?>libro/eliminar&isbn=<?= $lib->isbn ?>">Eliminar</a>
+                    <a href="<?= base_url ?>libro/editar&isbn=<?= $lib->isbn ?>" class="a_editar" onClick="habilitar()">Editar</a>
+                    <a href="<?= base_url ?>libro/eliminar&isbn=<?= $lib->isbn ?>" class="a_eliminar">Eliminar</a>
                     <?php if(Utils::existeEnOferta($lib->isbn)):?>
-                    <a href="<?= base_url ?>oferta/editar&isbn=<?= $lib->isbn ?>" style="color: #500117">En oferta</a>
+                    <a href="<?= base_url ?>oferta/editar&isbn=<?= $lib->isbn ?>" style="color: #500117" class="a_enOferta">En oferta</a>
                     <?php else : ?>
-                    <a href="<?= base_url ?>oferta/crearOferta&isbn=<?= $lib->isbn ?>">Añadir oferta</a>
+                    <a href="<?= base_url ?>oferta/crearOferta&isbn=<?= $lib->isbn ?>" class="a_addOferta">Añadir oferta</a>
                     <?php endif;?>
                 </td>
             </tr>

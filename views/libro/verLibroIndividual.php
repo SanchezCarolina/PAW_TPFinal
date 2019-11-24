@@ -3,7 +3,7 @@
 <?php if (isset($lib)): ?>
     <?php if (isset($lib->isbn)): ?>
         <?php if (isset($sin_stock)): ?>
-            <h2 class="alerta_aviso">Lo sentimos, no hay stock para agregar al carrito</h2>
+            <h2 class="alerta_roja">Lo sentimos, no hay stock para agregar al carrito</h2>
         <?php endif; ?>
         <h1><?= $lib->titulo ?></h1>
         <div class="libIndividual"><img alt="Portada de libro" class="portadaIndividual" src="<?= $lib->portada ?>"></div>

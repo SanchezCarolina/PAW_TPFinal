@@ -48,7 +48,7 @@
     <input type="submit" value="Confirmar">
 </form>
 <?php else:?>
-<h2 class="alerta_aviso">Debes iniciar sesión para realizar un pedido</h2>
+<h2 class="alerta_roja">Debes iniciar sesión para realizar un pedido</h2>
 <?php endif; ?>
 
 

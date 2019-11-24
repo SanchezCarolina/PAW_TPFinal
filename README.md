@@ -2,6 +2,9 @@
 
 PASOS A SEGUIR PARA EJECUTAR EL SISTEMA EN LOCALHOST:
 
+-Dirigirse a la carpeta 'config' abrir el archivo 'parameters.php' y a continuacion en la linea que muestre lo siguiente:
+'define ("base_url", "http://localhost/SanchezTPFinal/");' 
+cambiar la url con los datos reales de donde hayas colocado la carpeta del proyecto y con el nombre correspondiente.
 -Crear una base de datos en PhpMyAdmin. Para eso entrar en la carpeta 'database' y copiar el contenido del archivo 'database.sql', luego pegarlo en la seccion SQL de PhpMyAdmin.
 -Cargar la base de datos para que la página cuente con la información minima para funcionar. Para ello, primero crear mediante la web un usuario admin con la siguiente informacion (mail: admin@gmail.com, contraseña: admin) y otro usuario comun con la informacion(usuario1@gmail.com, contraseña: usuario1). Luego entrar en la carpeta 'database' y copiar el contenido del archivo 'datos_base.txt', luego pegarlo en la seccion SQL de la base de datos creada anteriormente.
 -Para el usuario admin, entrar a PHPMyAdmin y modificar el rol del usuario, en lugar de 'user' colocar 'admin'.
