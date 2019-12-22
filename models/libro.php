@@ -272,7 +272,7 @@ class Libro {
     }
 
     public function edit() {
-        $sql = "update libro set isbn='{$this->getIsbn()}', genero='{$this->getGenero()}', titulo='{$this->getTitulo()}', autor='{$this->getAutor()}', portada='{$this->getPortada()}', fecha_carga='{$this->getFecha_carga()}', precio={$this->getPrecio()}, stock={$this->getStock()} where isbn='{$this->isbn}'";
+        $sql = "update libro set precio={$this->getPrecio()}, stock={$this->getStock()} where isbn='{$this->isbn}'";
         $save = $this->db->query($sql);
 
         $result = false;

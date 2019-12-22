@@ -1,5 +1,6 @@
 <?php
-session_start();
+// Este archivo se va a encargar de recoger los parámetros de la URL y ver a que controlador pertenece
+session_start();	//para tener la sesion iniciada en todo el proyecto
 require_once 'autoload.php';
 require_once 'config/db.php';
 require_once 'config/parameters.php';
@@ -13,7 +14,7 @@ function mostrar_error(){
 
 if(isset($_GET['controller'])){                            //compruebo que llegue un controlador por la url
 	$nombre_controlador = $_GET['controller'].'Controller';
-}elseif(!isset($_GET['controller']) && !isset($_GET['action'])){
+}elseif(!isset($_GET['controller']) && !isset($_GET['action'])){	//si no llega ningun controlador, que cargue el controlador y la accion por defecto
     $nombre_controlador = controller_default;
 }else{
 	mostrar_error();

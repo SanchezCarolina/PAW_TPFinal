@@ -2,9 +2,22 @@
 <script type="text/javascript">
     google.books.load();
 
+/*
     function initialize() {
         var viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
         viewer.load('ISBN:<?= $isbn ?>');
+    }
+    google.books.setOnLoadCallback(initialize);
+    */
+
+
+    function alertNotFound() {
+        alert("El libro seleccionado no tiene vista previa disponible :(");
+    }
+
+    function initialize() {
+        var viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
+        viewer.load('ISBN:<?= $isbn ?>', alertNotFound);
     }
     google.books.setOnLoadCallback(initialize);
     
@@ -13,6 +26,7 @@
         contenedor.style.visibility = 'hidden';
         contenedor.style.opacity = '0';
     }
+    
 </script>
 
 <div id="contenedor_carga">

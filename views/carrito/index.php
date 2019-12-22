@@ -19,7 +19,13 @@
                 <tr>
                     <td><img alt="Portada del libro" src="<?= $libro->portada ?>" class="imgPedido"></td>
                     <td data-titulo="Titulo"><?= $libro->titulo ?></td>
+
+                    <?php if (Utils::existeEnOferta($libro->isbn)): ?>
+                    <td data-titulo="Precio"><?= $libro->new_precio ?></td>
+                    <?php else: ?>
                     <td data-titulo="Precio"><?= $libro->precio ?></td>
+                <?php endif; ?>
+
                     <td data-titulo="Unidades">
                         <div class="botonUnidMobile"><a href="<?= base_url ?>/carrito/down&index=<?= $indice ?>" class="botonUnidades botonAdmin">-</a></div>
                         <div class="botonUnidMobile"><a href="<?= base_url ?>/carrito/up&index=<?= $indice ?>" class="botonUnidades botonAdmin">+</a></div>

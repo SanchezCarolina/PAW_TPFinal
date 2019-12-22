@@ -1,6 +1,7 @@
 <?php
 
 require_once 'models/libro.php';
+require_once 'models/oferta.php';
 
 class carritoController {
 
@@ -20,7 +21,7 @@ class carritoController {
         } else {
             header("Location: " . base_url);
         }
-        if (isset($_SESSION['carrito'])) {
+        if (isset($_SESSION['carrito'])) {                  //si agrego un libro que ya estaba en el carrito, le sumo uno a las unidades
             $counter = 0;
             foreach ($_SESSION['carrito'] as $indice => $elemento) {
                 if ($elemento['isbn'] == $libro_isbn) {
@@ -28,8 +29,33 @@ class carritoController {
                     $counter++;
                 }
             }
+            header("Location: " . base_url . 'carrito/index');
         }
-        if (!isset($counter) || $counter == 0) {
+        if (!isset($counter) || $counter == 0) {            //si no hay ningun producto en el carrito agrego
+          
+            $enOferta = Utils::existeEnOferta($libro_isbn);
+            if ($enOferta){
+                $oferta = new Oferta();
+                $oferta->setIsbn($libro_isbn);
+                $ofer = $oferta->getOneLibroOferta();  
+
+                  //Añadir al carrito
+                if (is_object($ofer)) {
+                    if($ofer->stock == 0){
+                        $sin_stock = true;
+                        require_once 'views/libro/oferta/verOfertaIndividual.php';
+                    }else{
+                        $_SESSION['carrito'][] = array(
+                            "isbn" => $ofer->isbn,
+                            "precio" => $ofer->new_precio,
+                            "unidades" => 1,
+                            "libro" => $ofer
+                        );
+                        header("Location: " . base_url . 'carrito/index');
+                    }
+                }  
+            }
+           else{
             //conseguir el producto (libro)
             $libro = new Libro();
             $libro->setIsbn($libro_isbn);
@@ -46,10 +72,12 @@ class carritoController {
                         "unidades" => 1,
                         "libro" => $lib
                     );
+                    header("Location: " . base_url . 'carrito/index');
+                }
                 }
             }
         }
-        header("Location: " . base_url . 'carrito/index');
+        
     }
 
     public function remove(){

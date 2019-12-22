@@ -1,7 +1,7 @@
 <?php
 
 class Utils{
-    public static function deleteSession($name){
+    public static function deleteSession($name){        //para borrar los mensajes de sesion de las vistas cuando se actualiza la pantalla
         
         if(isset($_SESSION[$name])){
             $_SESSION[$name] = null;

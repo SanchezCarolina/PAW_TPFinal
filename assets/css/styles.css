@@ -5,6 +5,10 @@
     src: url("../fonts/Cardinal.ttf");
 }
 
+body{
+    background-color: #dcdde1bf;
+}
+
 /*GENERAL*/
 #contenedorPrincipal{
     width: 75%;
@@ -169,7 +173,7 @@ h2{
     width: 100%;
     overflow: hidden;
     background: #ccc;
-    min-height: 450px;
+    min-height: 520px;
 }
 
 .divH2{
@@ -798,6 +802,10 @@ td .alerta_aviso{
     .slide-contenedor{
         display: none;
     }
+    
+/*    #contenido{
+        min-height: 520px;
+    }*/
 }
 
 

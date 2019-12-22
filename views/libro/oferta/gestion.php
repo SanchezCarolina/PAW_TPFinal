@@ -37,6 +37,7 @@
     <thead>
         <tr>
             <th>ISBN</th>
+            <th>TÍTULO</th>
             <th>PRECIO</th>
             <th>ACCIONES</th>
         </tr>
@@ -45,6 +46,7 @@
         <?php while ($ofer = $ofertas->fetchObject()): ?>
             <tr>
                 <td data-titulo="ISBN"><a href="<?= base_url ?>libro/verLibroIndividual&isbn=<?= $ofer->isbn ?>" class="link_tabla"><?= $ofer->isbn; ?></a></td>
+                <td data-titulo="Título"><?= $ofer->titulo; ?></td>
                 <td data-titulo="Precio"><?= $ofer->new_precio; ?></td>
                 <td>
                     <a href="<?= base_url ?>oferta/editar&isbn=<?= $ofer->isbn ?>" class="a_editar"> Editar</a>

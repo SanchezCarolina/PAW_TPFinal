@@ -30,6 +30,7 @@ class pedidoController{
                 $pedido->setCod_postal($cod_postal);
                 
                 $save = $pedido->save();
+                
                 //guardar pedido_libros
                 $pedidos_libros = $pedido->save_ped_libro();
                 
