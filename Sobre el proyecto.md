@@ -9,7 +9,7 @@
 * Para pasar de usuario visitante a registrado solamente hay que completar el formulario de registro que aparecerá al hacer click sobre el botón "Registrar".
 * Como usuario registrado se podrán realizar todas las acciones que pueden hacer los visitantes pero se suma la opción de agregar productos al carrito y poder realizar compras.
 * El usuario administrador tiene acceso a todos las secciones comunes, pero lo más importante es que es el encargado del manejo del sistema.
-* El administrador puede cargar, borrar y modificar libros, provistos por la API de Google Books y posteriormente almacenados en la base de datos propia del sistema.
+* El administrador puede cargar, borrar y modificar libros, provistos por la API de Google Books que posteriormente son almacenados en la base de datos propia del sistema.
 * El administrador puede generar ofertas con los libros de su base de datos, también puede modificar dichas ofertas y eliminarlas.
 * El administrador puede manejar el estado de los pedidos que recibe el sistema por parte de los usuarios registrados.
 
