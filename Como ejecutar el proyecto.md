@@ -1,6 +1,6 @@
 # Programación en Ambiente Web 2019 - Trabajo Práctico Final
 
-PASOS A SEGUIR PARA EJECUTAR EL SISTEMA EN LOCALHOST:
+## PASOS A SEGUIR PARA EJECUTAR EL SISTEMA EN LOCALHOST:
 
 -Dirigirse a la carpeta 'config' abrir el archivo 'parameters.php' y a continuacion en la linea que muestre lo siguiente:
 'define ("base_url", "http://localhost/SanchezTPFinal/");' 
